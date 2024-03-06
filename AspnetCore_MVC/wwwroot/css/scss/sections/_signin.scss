@@ -1,0 +1,72 @@
+@import '../core/_media.scss';
+
+#signin {
+    height: 100%;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        @include lg {
+            width: 60%;
+        }
+
+        @include xl {
+            width: 40%;
+        }
+
+        form {
+            padding: 1rem;
+
+            .content {
+                display: grid;
+                gap: 1rem 2rem;
+                grid-template-columns: 1fr;
+                grid-template-areas: "email" "password" "remember" "invalid" "button" "forgot";
+
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-password {
+                    grid-area: password;
+                }
+
+                #form-remember {
+                    grid-area: remember;
+                    padding: 1rem 0;
+                }
+
+                #form-submit {
+                    grid-area: button;
+                }
+
+                #form-forgotpassword {
+                    grid-area: forgot;
+                    margin: 1rem 0 0 0;
+                    text-align: center;
+                }
+                #form-invalid{
+                    grid-area: invalid;
+
+                }
+
+                hr {
+                    grid-area: hr;
+                }
+
+                #external-signin {
+                    grid-area: external;
+                    display: flex;
+                    gap: 1rem;
+
+                    a {
+                        flex: 1;
+                    }
+                }
+            }
+        }
+    }
+}

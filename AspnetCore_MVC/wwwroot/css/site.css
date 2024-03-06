@@ -358,6 +358,70 @@ a:hover {
   color: #FFFFFF;
 }
 
+form {
+  width: 100%;
+  display: grid;
+}
+form .input-group {
+  display: grid;
+}
+form .checkbox span.field-validation-error {
+  position: static;
+  top: 0;
+  right: 0;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px !important;
+  color: #EF4444;
+}
+form .checkbox-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+form .checkbox-group input[type=checkbox] {
+  height: 1.2rem;
+  width: 1.2rem;
+  border: 0.063rem solid red;
+}
+form .checkbox-group label {
+  margin: 0;
+  font-weight: 400;
+}
+form label {
+  margin-bottom: 0.188rem;
+  font-weight: 700;
+}
+form input {
+  padding: 1rem;
+  border-radius: 0.5rem !important;
+  border: 0.063rem solid #D4D7E5;
+}
+form input::placeholder {
+  opacity: 0.4;
+}
+form input.input-validation-error {
+  border: 0.063rem solid #EF4444 !important;
+  color: #EF4444;
+}
+form input.input-validation-error::placeholder {
+  color: #EF4444;
+}
+form span.field-validation-error {
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px !important;
+  color: #EF4444;
+}
+
 header {
   padding: 15px 0;
 }
@@ -439,55 +503,120 @@ footer .container .social-media {
   margin-bottom: 30px;
 }
 
-form {
-  width: 100%;
-  display: grid;
+#signup {
+  height: 100%;
 }
-form .input-group {
-  display: grid;
-}
-form .checkbox-group {
+#signup .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  height: 100%;
 }
-form .checkbox-group input[type=checkbox] {
-  height: 1.2rem;
-  width: 1.2rem;
-  border: 0.063rem solid red;
+@media (min-width: 992px) {
+  #signup .container {
+    width: 60%;
+  }
 }
-form .checkbox-group label {
-  margin: 0;
-  font-weight: 400;
+@media (min-width: 1200px) {
+  #signup .container {
+    width: 40%;
+  }
 }
-form label {
-  margin-bottom: 0.188rem;
-  font-weight: 700;
-}
-form input {
+#signup .container form {
   padding: 1rem;
-  border-radius: 0.5rem !important;
-  border: 0.063rem solid #D4D7E5;
 }
-form input::placeholder {
-  opacity: 0.4;
+#signup .container form .content {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "term" "button";
 }
-form input.input-validation-error {
-  border: 0.063rem solid #EF4444 !important;
-  color: #EF4444;
+@media (min-width: 768px) {
+  #signup .container form .content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "term term" "button button";
+  }
 }
-form input.input-validation-error::placeholder {
-  color: #EF4444;
+#signup .container form .content #form-firstname {
+  grid-area: firstname;
 }
-form span.field-validation-error {
-  position: absolute;
-  top: 0;
-  right: 0;
-  line-height: 160%;
-  font-weight: 400;
-  color: #565973;
-  font-family: "Manrope", sans-serif;
-  font-size: 14px !important;
-  color: #EF4444;
+#signup .container form .content #form-lastname {
+  grid-area: lastname;
+}
+#signup .container form .content #form-email {
+  grid-area: email;
+}
+#signup .container form .content #form-password {
+  grid-area: password;
+}
+#signup .container form .content #form-confirmpassword {
+  grid-area: confirm;
+}
+#signup .container form .content #form-terms {
+  grid-area: term;
+  padding: 1rem 0;
+}
+#signup .container form .content #form-submit {
+  grid-area: button;
+}
+
+#signin {
+  height: 100%;
+}
+#signin .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+@media (min-width: 992px) {
+  #signin .container {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  #signin .container {
+    width: 40%;
+  }
+}
+#signin .container form {
+  padding: 1rem;
+}
+#signin .container form .content {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: "email" "password" "remember" "invalid" "button" "forgot";
+}
+#signin .container form .content #form-email {
+  grid-area: email;
+}
+#signin .container form .content #form-password {
+  grid-area: password;
+}
+#signin .container form .content #form-remember {
+  grid-area: remember;
+  padding: 1rem 0;
+}
+#signin .container form .content #form-submit {
+  grid-area: button;
+}
+#signin .container form .content #form-forgotpassword {
+  grid-area: forgot;
+  margin: 1rem 0 0 0;
+  text-align: center;
+}
+#signin .container form .content #form-invalid {
+  grid-area: invalid;
+}
+#signin .container form .content hr {
+  grid-area: hr;
+}
+#signin .container form .content #external-signin {
+  grid-area: external;
+  display: flex;
+  gap: 1rem;
+}
+#signin .container form .content #external-signin a {
+  flex: 1;
 }
