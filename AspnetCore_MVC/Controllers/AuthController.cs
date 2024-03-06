@@ -24,5 +24,28 @@ namespace AspnetCore_MVC.Controllers
             return RedirectToAction("SignIn", "Auth");
         }
 
+
+        [Route("/signin")]
+        [HttpGet]
+        public IActionResult SignIn()
+        {
+            var viewModel = new SignInViewmodel();
+            return View(viewModel);
+        }
+
+        [Route("/signin")]
+        [HttpPost]
+        public IActionResult SignIn(SignInViewmodel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                viewModel.ErrorMessage = "Incorrect email or password";
+                return View(viewModel);
+            }
+            return RedirectToAction("Account", "Index");
+        }
+
     }
+
+
 }
