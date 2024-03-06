@@ -1,18 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspnetCore_MVC.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AspnetCore_MVC.Controllers
 {
     public class AuthController : Controller
     {
         [Route("/signup")]
+        [HttpGet]
         public IActionResult SignUp()
         {
-            return View();
+            var viewModel = new SignUpViewmodel();  
+            return View(viewModel);
         }
 
-        public IActionResult SignIn()
+        [Route("/signup")]
+        [HttpPost]
+        public IActionResult SignUp(SignUpViewmodel viewModel)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
+            return RedirectToAction("SignIn", "Auth");
         }
 
     }
