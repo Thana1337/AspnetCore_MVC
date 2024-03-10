@@ -620,3 +620,57 @@ footer .container .social-media {
 #signin .container form .content #external-signin a {
   flex: 1;
 }
+
+section.feature {
+  background-color: #F3F6FF;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+section.feature .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section.feature .container .title h1 {
+  font-weight: 900;
+}
+section.feature .container .title p {
+  font-weight: 600;
+  color: gray;
+}
+section.feature .container .feature-box {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+section.feature .container .feature-box .features {
+  padding: 50px;
+  text-align: center;
+  border-right: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
+  transition: all 0.5s;
+}
+section.feature .container .feature-box .features:hover {
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+section.feature .container .feature-box #box-3 {
+  border-right: 0px;
+}
+section.feature .container .feature-box #box-4 {
+  border-bottom: 0px;
+}
+section.feature .container .feature-box #box-5 {
+  border-bottom: 0px;
+}
+section.feature .container .feature-box #box-6 {
+  border: 0px;
+}
