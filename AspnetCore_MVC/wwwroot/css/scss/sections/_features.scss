@@ -45,16 +45,37 @@
                     }
                 }
 
-                #box-3 {
+                #box-1 {
+                }
+
+                #box-2 {
                     border-right: 0px;
+
+                    @include lg {
+                        border-right: 1px solid #D9D9D9;
+                    }
+                }
+
+                #box-3 {
+                    @include lg {
+                        border-right: 0px;
+                    }
                 }
 
                 #box-4 {
-                    border-bottom: 0px;
+                    border-right: 0px;
+
+                    @include lg {
+                        border: 0px
+                    }
                 }
 
                 #box-5 {
                     border-bottom: 0px;
+
+                    @include lg {
+                        border-left: 1px solid #D9D9D9;
+                    }
                 }
 
                 #box-6 {

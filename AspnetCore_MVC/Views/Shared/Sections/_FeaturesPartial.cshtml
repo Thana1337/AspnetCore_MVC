@@ -1,41 +1,23 @@
-﻿
-<section id="features" class="feature">
+﻿@model FeaturesViewModel
+
+<section id="@Model.Id" class="feature">
     <div class="container">
         <div class="title">
-            <h1>What Do You Get with Our Tool?</h1>
-            <p>Make sure all your tasks are organized so you can set the priorities and focus on important.</p>
+            <h1>@Model.Title</h1>
+            <p>@Model.Text</p>
         </div>
         <div class="feature-box">
-            <div class="features">
-                <img src="./asset/img/chat.svg">
-                <h5>Comments on Tasks</h5>
-                <p>Id mollis consectetur congue egestas egestas suspendisse blandit justo.</p>
-            </div>
-            <div class="features">
-                <img src="./asset/img/presentation.svg">
-                <h5>Tasks Analytics</h5>
-                <p>Non imperdiet facilisis nulla tellus Morbi scelerisque eget adipiscing vulputate.</p>
-            </div>
-            <div id="box-3" class="features">
-                <img src="./asset/img/add-group.svg">
-                <h5>Multiple Assignees</h5>
-                <p>A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris.</p>
-            </div>
-            <div id="box-4" class="features">
-                <img src="./asset/img/bell.svg">
-                <h5>Notifications</h5>
-                <p>Diam, suspendisse velit cras ac. Lobortis diam volutpat, eget pellentesque viverra.</p>
-            </div>
-            <div id="box-5" class="features">
-                <img src="./asset/img/test.svg">
-                <h5>Sections & Subtasks</h5>
-                <p>Mi feugiat hac id in. Sit elit placerat lacus nibh lorem ridiculus lectus.</p>
-            </div>
-            <div id="box-6" class="features">
-                <img src="./asset/img/shield.svg">
-                <h5>Data Security</h5>
-                <p>Aliquam malesuada neque eget elit nulla vestibulum nunc cras.</p>
-            </div>
+            @if (Model.Features != null)
+            {
+                foreach (var feature in @Model.Features)
+                {
+                    <div id="@feature.BoxId" class="features">
+                        <img src="@feature.ImageUrl" alt="@feature.AltText">
+                        <h5>@feature.Title</h5>
+                        <p>@feature.Text</p>
+                    </div>
+                }
+            }
         </div>
     </div>
 </section>

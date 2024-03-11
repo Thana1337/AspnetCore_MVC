@@ -741,14 +741,34 @@ section.feature .container .feature-box .features:hover {
   background-color: #FFFFFF;
   cursor: pointer;
 }
-section.feature .container .feature-box #box-3 {
+section.feature .container .feature-box #box-2 {
   border-right: 0px;
 }
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-2 {
+    border-right: 1px solid #D9D9D9;
+  }
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-3 {
+    border-right: 0px;
+  }
+}
 section.feature .container .feature-box #box-4 {
-  border-bottom: 0px;
+  border-right: 0px;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-4 {
+    border: 0px;
+  }
 }
 section.feature .container .feature-box #box-5 {
   border-bottom: 0px;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-5 {
+    border-left: 1px solid #D9D9D9;
+  }
 }
 section.feature .container .feature-box #box-6 {
   border: 0px;

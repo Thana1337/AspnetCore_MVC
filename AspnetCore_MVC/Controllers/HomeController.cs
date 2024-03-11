@@ -1,4 +1,5 @@
-﻿using AspnetCore_MVC.Models.Views;
+﻿using AspnetCore_MVC.Models.Component;
+using AspnetCore_MVC.Models.Views;
 using AspnetCore_MVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +11,7 @@ public class HomeController : Controller
     {
         var viewModel = new HomeIndexViewModel
         {
+
             Title = "Ultimate Task Management Assistant",
             Showcase = new ShowcaseViewmodel
             {
@@ -27,7 +29,28 @@ public class HomeController : Controller
                     new() { ImageUrl = "Images/brand_4.svg", AltText = "Brand Name 4"}
                 ],
 
+            },
+
+            Features = new FeaturesViewModel
+            {
+                Id = "feature",
+                Title = "What Do You Get with Our Tool?",
+                Text = "Make sure all your tasks are organized so you can set the priorities and focus on important.",
+                Features = new List<FeatureComponent>
+                {
+                    new FeatureComponent { BoxId = "box-1" , ImageUrl = "/Images/chat.svg", AltText = "chatbox icon", Title = "Comments on Tasks", Text = "Id mollis consectetur congue egestas egestas suspendisse blandit justo."},
+                    new FeatureComponent { BoxId = "box-2" , ImageUrl = "/Images/presentation.svg", AltText = "presentation icon", Title = "Tasks Analytics", Text = "Non imperdiet facilisis nulla tellus Morbi scelerisque eget adipiscing vulputate."},
+                    new FeatureComponent { BoxId = "box-3" , ImageUrl = "/Images/add-group.svg", AltText = "add group icon", Title = "Multiple Assignees", Text = "A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris."},
+                    new FeatureComponent { BoxId = "box-4" , ImageUrl = "/Images/bell.svg", AltText = "bell icon", Title = "Notifications", Text = "Diam, suspendisse velit cras ac. Lobortis diam volutpat, eget pellentesque viverra."},
+                    new FeatureComponent { BoxId = "box-5" , ImageUrl = "/Images/test.svg", AltText = "test icon", Title = "Sections & Subtasks", Text = "Mi feugiat hac id in. Sit elit placerat lacus nibh lorem ridiculus lectus."},
+                    new FeatureComponent { BoxId = "box-6" , ImageUrl = "/Images/shield.svg", AltText = "shield icon", Title = "Data Security", Text = "Aliquam malesuada neque eget elit nulla vestibulum nunc cras."}
+                }
+
+
+
             }
+
+
         };
 
         ViewData["Title"] = viewModel.Title;
