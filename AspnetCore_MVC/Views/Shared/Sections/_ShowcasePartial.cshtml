@@ -11,7 +11,7 @@
             <div class="brands">
                 @if (Model.Brands != null)
                 {
-                    foreach (var brand in Model.Brands)
+                    foreach (var brand in @Model.Brands)
                     {
                         <img src="@brand.ImageUrl" alt="@brand.AltText">
                         <img src="~/Images/brand_1.svg" />
