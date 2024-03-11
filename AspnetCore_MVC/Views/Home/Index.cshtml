@@ -1,9 +1,17 @@
 ﻿@using AspnetCore_MVC.Models.Views
 @model HomeIndexViewModel
 
-@await Html.PartialAsync("~/Views/Shared/Sections/_ShowcasePartial.cshtml", Model.Showcase)
+@{
+    <div id="showcase">
+        @await Html.PartialAsync("~/Views/Shared/Sections/_ShowcasePartial.cshtml", Model.Showcase)
 
-@await Html.PartialAsync("~/Views/Shared/Sections/_FeaturesPartial.cshtml")
+    </div>
+
+    <div id="features">
+        @await Html.PartialAsync("~/Views/Shared/Sections/_FeaturesPartial.cshtml")
+    </div>
+}
+
 
 
 

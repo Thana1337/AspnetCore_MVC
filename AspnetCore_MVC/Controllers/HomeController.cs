@@ -22,7 +22,7 @@ public class HomeController : Controller
                 Brands =
                 [
                     new() { ImageUrl = "Images/brand_1.svg", AltText = "Brand Name 1"},
-                    new() { ImageUrl = "Images/brand_1.svg", AltText = "Brand Name 2"},
+                    new() { ImageUrl = "Images/brand_2.svg", AltText = "Brand Name 2"},
                     new() { ImageUrl = "Images/brand_3.svg", AltText = "Brand Name 3"},
                     new() { ImageUrl = "Images/brand_4.svg", AltText = "Brand Name 4"}
                 ],
