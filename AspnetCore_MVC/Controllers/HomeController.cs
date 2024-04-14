@@ -48,7 +48,28 @@ public class HomeController : Controller
 
 
 
-            }
+            },
+
+            Mockup = new MockupViewModel()
+            {
+                Id = "mockup"
+            },
+
+            ManageWork = new ManageWorkViewModel()
+            {
+                Id="ManageWork",
+                Title= "Manage Your Work",
+                ManageWorkImg = new() { ImageUrl = "/Images/managework.svg",  AltText= ""},
+                Link = new () { ActionName="", ControllerName="", Text="Learn More"},
+                ManageWorkLists = new List<ManageWorkList>
+                {
+                    new ManageWorkList { Icon = "/Images/bx-check-circle.svg", Text ="Powerful project management"},
+                    new ManageWorkList { Icon = "/Images/bx-check-circle.svg", Text ="Transparent work management"},
+                    new ManageWorkList { Icon = "/Images/bx-check-circle.svg", Text ="Manage work & focus on the most important tasks"},
+                    new ManageWorkList { Icon = "/Images/bx-check-circle.svg", Text ="Track your progress with interactive charts"},
+                    new ManageWorkList { Icon = "/Images/bx-check-circle.svg", Text ="Easiest way to track time spent on tasks"},
+                }
+            },
 
 
         };

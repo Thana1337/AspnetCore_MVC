@@ -10,6 +10,14 @@
     <div id="features">
         @await Html.PartialAsync("~/Views/Shared/Sections/_FeaturesPartial.cshtml", Model.Features )
     </div>
+
+    <div id="mockup">
+        @await Html.PartialAsync("~/Views/Shared/Sections/_MockupPartial.cshtml", Model.Mockup)
+    </div>
+
+    <div id="managework">
+        @await Html.PartialAsync("~/Views/Shared/Sections/_ManageWorkPartial.cshtml", Model.ManageWork)
+    </div>
 }
 
 

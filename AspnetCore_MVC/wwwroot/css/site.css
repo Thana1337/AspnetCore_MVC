@@ -773,3 +773,31 @@ section.feature .container .feature-box #box-5 {
 section.feature .container .feature-box #box-6 {
   border: 0px;
 }
+
+section.managework .container {
+  display: flex;
+  align-items: center;
+}
+section.managework .container img {
+  margin-right: 50px;
+}
+section.managework .container .content {
+  padding: 50px;
+}
+section.managework .container .content h2 {
+  margin-bottom: 30px;
+}
+section.managework .container .content .list {
+  display: flex;
+  align-items: center;
+}
+section.managework .container .content .list svg {
+  margin-right: 10px;
+  margin-bottom: 16px;
+}
+section.managework .container .content a {
+  margin-top: 20px;
+  width: 159px;
+  max-height: 44px;
+  display: flex;
+}

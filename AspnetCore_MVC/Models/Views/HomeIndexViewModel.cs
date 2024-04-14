@@ -9,4 +9,8 @@ public class HomeIndexViewModel
 
     public FeaturesViewModel Features { get; set; } = null!;
 
+    public MockupViewModel Mockup { get; set; } = null !;
+
+    public ManageWorkViewModel ManageWork { get; set; } = null!;
+
 }
