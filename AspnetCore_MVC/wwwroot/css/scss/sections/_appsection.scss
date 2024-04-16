@@ -1,0 +1,36 @@
+﻿section {
+    padding: 5px;
+    margin-top: 50px;
+
+    &.app {
+        background-color: #F3F6FF;
+
+        .container {
+            background-color: #EFF2FC;
+            display: flex;
+            justify-content: space-between;
+
+            #bg {
+                border: 1px solid #000000;
+            }
+
+            .content {
+                border: 1px solid #000000;
+
+                .applications {
+                    border: 1px solid #000000;
+                    display:grid;
+                    grid-template-areas: rating link;
+
+                    #apprating{
+                        grid-area: rating;
+                    }
+
+                    #appbutton{
+                        grid-area: link;
+                    }
+                }
+            }
+        }
+    }
+}

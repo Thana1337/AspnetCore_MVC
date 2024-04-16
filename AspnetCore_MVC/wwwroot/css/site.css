@@ -506,6 +506,85 @@ footer .container .social-media {
   margin-bottom: 30px;
 }
 
+.showcase {
+  position: relative;
+  margin-bottom: 80px;
+}
+@media (min-width: 992px) {
+  .showcase {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 0px;
+  }
+}
+.showcase img {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+}
+@media (min-width: 992px) {
+  .showcase img {
+    width: 55%;
+  }
+}
+.showcase .container {
+  height: 100%;
+}
+.showcase .container h1 {
+  margin-top: 20px;
+}
+@media (min-width: 992px) {
+  .showcase .container {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+}
+.showcase .container .content {
+  margin-top: 0px;
+  width: 100%;
+  text-align: center;
+}
+.showcase .container .content .brands img {
+  width: 20%;
+}
+@media (min-width: 992px) {
+  .showcase .container .content .brands {
+    display: flex;
+    width: 524px;
+    height: 44px;
+    gap: 24px;
+  }
+  .showcase .container .content .brands img {
+    z-index: 0;
+  }
+}
+@media (min-width: 992px) {
+  .showcase .container .content {
+    margin-top: 80px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    width: 526px;
+  }
+  .showcase .container .content h1 {
+    padding: 15px 0px;
+    width: 70%;
+  }
+  .showcase .container .content p {
+    padding: 15px 0px;
+    width: 90%;
+  }
+  .showcase .container .content h6 {
+    margin-top: 100px;
+    padding: 15px 0px;
+  }
+  .showcase .container .content a {
+    width: 210px;
+    margin-top: 20px;
+  }
+}
+
 #signup {
   height: 100%;
 }
@@ -622,4 +701,136 @@ footer .container .social-media {
 }
 #signin .container form .content #external-signin a {
   flex: 1;
+}
+
+section.feature {
+  background-color: #F3F6FF;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+section.feature .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section.feature .container .title h1 {
+  font-weight: 900;
+}
+section.feature .container .title p {
+  font-weight: 600;
+  color: gray;
+}
+section.feature .container .feature-box {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+section.feature .container .feature-box .features {
+  padding: 50px;
+  text-align: center;
+  border-right: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
+  transition: all 0.5s;
+}
+section.feature .container .feature-box .features:hover {
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+section.feature .container .feature-box #box-2 {
+  border-right: 0px;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-2 {
+    border-right: 1px solid #D9D9D9;
+  }
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-3 {
+    border-right: 0px;
+  }
+}
+section.feature .container .feature-box #box-4 {
+  border-right: 0px;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-4 {
+    border: 0px;
+  }
+}
+section.feature .container .feature-box #box-5 {
+  border-bottom: 0px;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-5 {
+    border-left: 1px solid #D9D9D9;
+  }
+}
+section.feature .container .feature-box #box-6 {
+  border: 0px;
+}
+
+section.managework .container {
+  display: flex;
+  align-items: center;
+}
+section.managework .container img {
+  margin-right: 50px;
+}
+section.managework .container .content {
+  padding: 50px;
+}
+section.managework .container .content h2 {
+  margin-bottom: 30px;
+}
+section.managework .container .content .list {
+  display: flex;
+  align-items: center;
+}
+section.managework .container .content .list svg {
+  margin-right: 10px;
+  margin-bottom: 16px;
+}
+section.managework .container .content a {
+  margin-top: 20px;
+  width: 159px;
+  max-height: 44px;
+  display: flex;
+}
+
+section {
+  padding: 5px;
+  margin-top: 50px;
+}
+section.app {
+  background-color: #F3F6FF;
+}
+section.app .container {
+  background-color: #EFF2FC;
+  display: flex;
+  justify-content: space-between;
+}
+section.app .container #bg {
+  border: 1px solid #000000;
+}
+section.app .container .content {
+  border: 1px solid #000000;
+}
+section.app .container .content .applications {
+  border: 1px solid #000000;
+  display: grid;
+  grid-template-areas: rating link;
+}
+section.app .container .content .applications #apprating {
+  grid-area: rating;
+}
+section.app .container .content .applications #appbutton {
+  grid-area: link;
 }

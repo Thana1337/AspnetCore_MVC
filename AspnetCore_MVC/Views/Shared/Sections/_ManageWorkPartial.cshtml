@@ -1,0 +1,37 @@
+﻿@model ManageWorkViewModel
+
+<section id="@Model.Id" class="managework">
+
+    <div class="container">
+        <div>
+            <img src="@Model.ManageWorkImg.ImageUrl" alt="@Model.ManageWorkImg.AltText" />
+        </div>
+        <div class="content">
+            <h2>@Model.Title</h2>
+            <div>
+                @if (Model.ManageWorkLists != null)
+                {
+                    foreach (var managework in @Model.ManageWorkLists)
+                    {
+                        <div class="list">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.99984 1.66666C5.40484 1.66666 1.6665 5.40499 1.6665 9.99999C1.6665 14.595 5.40484 18.3333 9.99984 18.3333C14.5948 18.3333 18.3332 14.595 18.3332 9.99999C18.3332 5.40499 14.5948 1.66666 9.99984 1.66666ZM9.99984 16.6667C6.324 16.6667 3.33317 13.6758 3.33317 9.99999C3.33317 6.32416 6.324 3.33332 9.99984 3.33332C13.6757 3.33332 16.6665 6.32416 16.6665 9.99999C16.6665 13.6758 13.6757 16.6667 9.99984 16.6667Z" fill="#6366F1" />
+                                <path d="M8.33273 11.3225L6.4169 9.40999L5.24023 10.59L8.3344 13.6775L13.9227 8.08916L12.7444 6.91083L8.33273 11.3225Z" fill="#6366F1" />
+                            </svg>
+                            <p>@managework.Text</p>
+                        </div>
+                    }
+                }
+            </div>
+            <div>
+                <a class="btn-theme-s" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName">
+                    @Model.Link.Text
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.41083 10.4108L5.58917 11.5892L11.1783 5.99999L5.58917 0.410828L4.41083 1.58916L7.98833 5.16666H0V6.83333H7.98833L4.41083 10.4108Z" fill="white" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
