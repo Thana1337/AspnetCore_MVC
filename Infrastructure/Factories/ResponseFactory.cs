@@ -6,6 +6,26 @@ namespace Infrastructure.Factories;
 
 public class ResponseFactory
 {
+    //succeeded
+    public static ResponsResult Ok()
+    {
+        return new ResponsResult
+        {
+
+            Message ="Succeeded",
+            StatusCode = StatusCode.OK
+        };
+    }
+    //message
+    public static ResponsResult Ok(string? message = null)
+    {
+        return new ResponsResult
+        {
+            Message = message ?? "Succeeded",
+            StatusCode = StatusCode.OK
+        };
+    }
+    //obj and message
     public static ResponsResult Ok(object? obj, string? message = null)
     {
         return new ResponsResult
