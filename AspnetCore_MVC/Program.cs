@@ -1,3 +1,6 @@
+using Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace AspnetCore_MVC;
 
 public class Program
@@ -7,6 +10,9 @@ public class Program
 
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddControllersWithViews();
+
+        //Services
+        builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));  
 
 
 
