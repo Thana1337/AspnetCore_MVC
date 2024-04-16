@@ -801,3 +801,33 @@ section.managework .container .content a {
   max-height: 44px;
   display: flex;
 }
+
+section {
+  padding: 5px;
+  margin-top: 50px;
+}
+section.app {
+  background-color: #F3F6FF;
+}
+section.app .container {
+  background-color: #EFF2FC;
+  display: flex;
+  justify-content: space-between;
+}
+section.app .container #bg {
+  border: 1px solid #000000;
+}
+section.app .container .content {
+  border: 1px solid #000000;
+}
+section.app .container .content .applications {
+  border: 1px solid #000000;
+  display: grid;
+  grid-template-areas: rating link;
+}
+section.app .container .content .applications #apprating {
+  grid-area: rating;
+}
+section.app .container .content .applications #appbutton {
+  grid-area: link;
+}

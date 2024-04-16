@@ -1,0 +1,40 @@
+﻿@model AppViewModel
+
+<section id="@Model.Id" class="app">
+    <div class="container">
+        <div id="bg">
+            <img  src="@Model.Image.ImageUrl" alt="@Model.Image.AltText"/>
+        </div>
+        <div class="content">
+            <h1>@Model.Title</h1>
+            <div>
+                <div class="applications">
+                    @if (Model.Apps != null)
+                    {
+                        foreach (var application in @Model.Apps)
+                        {
+                            <div id="apprating">
+                                <p>@application.Name</p>
+                                <div class="rating">
+                                    <img src="Images/star.svg" alt="Five Star" />
+                                    <img src="Images/star.svg" alt="Five Star" />
+                                    <img src="Images/star.svg" alt="Five Star" />
+                                    <img src="Images/star.svg" alt="Five Star" />
+                                    <img src="Images/star.svg" alt="Five Star" />
+                                </div>
+                                <h4>@application.Award</h4>
+                                <p>@application.Rating</p>
+                            </div>
+                            <div id="appbutton">
+                                <a href="@application.LinkToStore">
+                                    <img src="@application.AppLink.ImageUrl" alt="@application.AppLink.AltText" />
+                                </a>
+                            </div>
+
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

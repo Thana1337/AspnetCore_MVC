@@ -13,4 +13,7 @@ public class HomeIndexViewModel
 
     public ManageWorkViewModel ManageWork { get; set; } = null!;
 
+    public AppViewModel App { get; set; } = null!;
+
+
 }
