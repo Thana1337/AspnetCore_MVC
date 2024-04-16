@@ -404,11 +404,14 @@ form input::placeholder {
   opacity: 0.4;
 }
 form input.input-validation-error {
-  border: 0.063rem solid #EF4444 !important;
+  border-color: #EF4444 !important;
   color: #EF4444;
 }
 form input.input-validation-error::placeholder {
   color: #EF4444;
+}
+form input:focus {
+  border-color: #EF4444 !important;
 }
 form span.field-validation-error {
   position: absolute;
