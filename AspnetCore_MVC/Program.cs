@@ -1,4 +1,6 @@
 using Infrastructure.Context;
+using Infrastructure.Repositories;
+using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace AspnetCore_MVC;
@@ -13,6 +15,10 @@ public class Program
 
         //Services
         builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));  
+        builder.Services.AddScoped<AddressRepository>();
+        builder.Services.AddScoped<UserRepository>();
+        builder.Services.AddScoped<AdderessService>();
+        builder.Services.AddScoped<UserService>();
 
 
 

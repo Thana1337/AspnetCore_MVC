@@ -15,18 +15,19 @@ public class UserService(UserRepository repository, AdderessService adderessServ
     {
         try
         {
-            var result = await _repository.AlreadyExistAsync(x => x.Email == model.Email);
-            if (result.StatusCode != StatusCode.EXIST)
-            {
-                result = await _repository.CreateOneAsync(UserFactory.Create(model));
-                if (result.StatusCode == StatusCode.OK)
-                {
-                    return ResponseFactory.Ok("User Created");
-                }
-                return result;
-            }
+            var exists = await _repository.AlreadyExistAsync(x => x.Email == model.Email);
 
-            return result;
+            if (exists.StatusCode == StatusCode.EXIST)
+                return exists;
+
+            var result = await _repository.CreateOneAsync(UserFactory.Create(model));
+            if (result.StatusCode != StatusCode.OK)
+                return result;
+
+            return ResponseFactory.Ok("User Created");
+
+
+;
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
 
