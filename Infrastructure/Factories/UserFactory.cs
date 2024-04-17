@@ -1,6 +1,7 @@
 ﻿
 
 using Infrastructure.Entities;
+using Infrastructure.Helpers;
 using Infrastructure.Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -29,6 +30,7 @@ public class UserFactory
         try
         {
             var date = DateTime.Now;
+            var (password, sercurityKey) =  PasswordHasher.GenerateHash(model.Password);
 
             return new UserEntity 
             {
@@ -36,7 +38,8 @@ public class UserFactory
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Email,
-                Password = model.Password,
+                Password = password,
+                SecurityKey = sercurityKey,
                 Created = date,
                 Modified = date,
             };

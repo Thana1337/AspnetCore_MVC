@@ -11,5 +11,11 @@ public class DataContext(DbContextOptions<DataContext> options) : DbContext(opti
 
     public DbSet<UserEntity> Users { get; set; }
 
+    public DbSet<FeatureEntity> Features { get; set; }
+
+    public DbSet<FeatureContentEntity> FeatureContent { get; set; }
+
+
+
 
 }

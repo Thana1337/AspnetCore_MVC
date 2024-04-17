@@ -41,14 +41,17 @@ namespace AspnetCore_MVC.Controllers
 
         [Route("/signin")]
         [HttpPost]
-        public IActionResult SignIn(SignInViewmodel viewModel)
+        public async Task<IActionResult> SignIn(SignInViewmodel viewModel)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                viewModel.ErrorMessage = "Incorrect email or password";
-                return View(viewModel);
+                var result = await _userService.SignInUserAsync(viewModel.Form);
+                if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+                    return RedirectToAction("Details", "Account");
+
             }
-            return RedirectToAction("Account", "Index");
+            viewModel.ErrorMessage = "Incorrect email or password";
+            return View(viewModel);
         }
 
     }

@@ -1,5 +1,7 @@
 ﻿
+using Infrastructure.Entities;
 using Infrastructure.Factories;
+using Infrastructure.Helpers;
 using Infrastructure.Models;
 using Infrastructure.Repositories;
 
@@ -26,11 +28,35 @@ public class UserService(UserRepository repository, AdderessService adderessServ
 
             return ResponseFactory.Ok("User Created");
 
-
-;
         }
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
 
     }
-        
+
+
+    public async Task<ResponsResult> SignInUserAsync(SignInModel model)
+    {
+        try
+        {
+            var result = await _repository.GetOneAsync(x => x.Email == model.Email);
+
+            if (result.StatusCode == StatusCode.OK && result.ContentResult != null)
+            {
+                var userEntity = (UserEntity)result.ContentResult;
+
+                if (PasswordHasher.ValidateSecurePassword(model.Password, userEntity.Password, userEntity.SecurityKey))
+                {
+                    return ResponseFactory.Ok();
+                }
+            }
+
+            return ResponseFactory.Error("Incorrect Email or Password");
+
+
+            ;
+        }
+        catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
+
+    }
+
 }

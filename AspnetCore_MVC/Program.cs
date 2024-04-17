@@ -13,12 +13,20 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddControllersWithViews();
 
-        //Services
+
         builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));  
+       
+        //Repositories
         builder.Services.AddScoped<AddressRepository>();
         builder.Services.AddScoped<UserRepository>();
+        builder.Services.AddScoped<FeatureRepository>();
+        builder.Services.AddScoped<FeatureContentRepository>();
+
+        //Services
         builder.Services.AddScoped<AdderessService>();
         builder.Services.AddScoped<UserService>();
+        builder.Services.AddScoped<FeatureService>();
+ 
 
 
 
