@@ -1,4 +1,7 @@
+
 using Infrastructure.Context;
+using Infrastructure.Contexts;
+using Infrastructure.Models.Identity;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +17,16 @@ public class Program
         builder.Services.AddControllersWithViews();
 
 
-        builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));  
+        builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+
+        builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+        builder.Services.AddDefaultIdentity<ApplicationUser>(x =>
+        {
+            x.User.RequireUniqueEmail = true;
+            x.SignIn.RequireConfirmedAccount = false;
+            x.Password.RequiredLength = 8;
+
+        }).AddEntityFrameworkStores<ApplicationDbContext>();
        
         //Repositories
         builder.Services.AddScoped<AddressRepository>();
