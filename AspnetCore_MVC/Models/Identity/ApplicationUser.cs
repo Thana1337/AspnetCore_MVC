@@ -1,0 +1,17 @@
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+
+namespace AspnetCore_MVC.Models.Identity;
+
+public class ApplicationUser : IdentityUser
+{
+
+    [Required]
+    [Display (Name ="First Name")]
+    [ProtectedPersonalData]
+    public string FirstName { get; set; } = null!;
+    [Required]
+    [Display(Name = "Last Name")]
+    [ProtectedPersonalData]
+    public string LastName { get; set; } = null!;
+}

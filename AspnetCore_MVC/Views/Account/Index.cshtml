@@ -1,0 +1,14 @@
+﻿@{
+
+    ViewData["Title"] = "Account";
+
+}
+
+
+<div class="container">
+    <div class="space">
+        <h4>Account For</h4>
+        <p>@User.Identity!.Name</p>
+    </div>
+    <a class="btn-theme" asp-controller="Auth" asp-action="SignOut">Sign Out</a>
+</div>

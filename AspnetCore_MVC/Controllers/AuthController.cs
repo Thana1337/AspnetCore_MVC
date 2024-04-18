@@ -1,6 +1,8 @@
 ﻿using AspnetCore_MVC.ViewModels;
 using Infrastructure.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace AspnetCore_MVC.Controllers
 {
@@ -46,12 +48,28 @@ namespace AspnetCore_MVC.Controllers
             if (ModelState.IsValid)
             {
                 var result = await _userService.SignInUserAsync(viewModel.Form);
-                if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
-                    return RedirectToAction("Details", "Account");
+                if (result.StatusCode == Infrastructure.Models.StatusCode.OK && result != null)
+                {
+                    var claims = new List<Claim>
+                    {
+                        
+                    };
+
+                    await HttpContext.SignInAsync("AuthCookie", new ClaimsPrincipal(new ClaimsIdentity(claims, "AuthCookie")));
+                    return RedirectToAction("Index", "Account");
+                }
 
             }
             viewModel.ErrorMessage = "Incorrect email or password";
             return View(viewModel);
+        }
+
+        [Route("/signout")]
+        [HttpPost]
+        public new async Task<IActionResult> SignOut(SignInViewmodel viewModel)
+        {
+            await HttpContext.SignOutAsync();
+            return RedirectToAction("Index", "Account");
         }
 
     }

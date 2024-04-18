@@ -26,6 +26,12 @@ public class Program
         builder.Services.AddScoped<AdderessService>();
         builder.Services.AddScoped<UserService>();
         builder.Services.AddScoped<FeatureService>();
+
+        builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", x =>
+        {
+            x.LoginPath = "/signin";
+            x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+        });
  
 
 
@@ -35,10 +41,11 @@ public class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
-        app.UseAuthorization();
+        app.UseAuthorization(); //vad får du göra
+        app.UseAuthentication(); //vem är du
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Home}/{action=Index}/{id?}");
+            pattern: "{controller=Account}/{action=Index}/{id?}");
 
         app.Run();
     }
