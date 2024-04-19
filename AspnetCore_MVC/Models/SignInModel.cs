@@ -1,7 +1,6 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Infrastructure.Models;
+namespace AspnetCore_MVC.Models;
 
 public class SignInModel
 {
