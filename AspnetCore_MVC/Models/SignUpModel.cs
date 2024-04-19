@@ -1,8 +1,6 @@
-﻿
-using AspnetCore_MVC.Helpers;
+﻿using AspnetCore_MVC.Helpers;
 using System.ComponentModel.DataAnnotations;
-
-namespace Infrastructure.Models;
+namespace AspnetCore_MVC.Models;
 
 public class SignUpModel
 {
@@ -41,3 +39,4 @@ public class SignUpModel
     [CheckBoxRequired(ErrorMessage = "You must agree to the Terms & Conditions.")]
     public bool TermsNCondition { get; set; }
 }
+ 

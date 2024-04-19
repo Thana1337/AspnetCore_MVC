@@ -1,21 +1,11 @@
-
-﻿@model AccountDetailViewModel
-=======
 ﻿@model AccountDetailsViewmodel
-
 
 @{
     ViewData["Title"] = $"Account Details for {Model.BasicInfo.FirstName} {Model.BasicInfo.LastName}";
 }
 
-
-
-<section id="account-details" class="account">
-    <div class="container">
-=======
 <div class="container">
     <section id="account-details">
-
         <aside>
             <div class="profile-info">
                 <img src="@Model.BasicInfo.ProfileImg" alt='@($"{Model.BasicInfo.FirstName} {Model.BasicInfo.LastName}")' />
@@ -24,13 +14,7 @@
             </div>
             <nav>
                 <a class="btn-theme-s" asp-controller="Account" asp-action="Details">Account Details</a>
-
-                <a class="btn-transparent" asp-controller="Account" asp-action="Security">Security</a>
-                <a class="btn-transparent" asp-controller="Course" asp-action="SavedCourses">Saved Courses</a>
-                <a class="btn-transparent" asp-controller="Account" asp-action="SignOut">Sign Out</a>
-=======
                 <a class="btn-transparent" asp-controller="Auth" asp-action="SignOut">Sign Out</a>
-
             </nav>
         </aside>
 
@@ -105,13 +89,5 @@
                 </form>
             </section>
         </div>
-
-
-    </div>
-</section>
-
-
-=======
     </section>
 </div>
-
