@@ -7,13 +7,16 @@
 
 <section id="signin">
     <div class="container">
-        <form method="post" asp-controller="Auth" asp-action="SignIn" novalidate>
+        <form method="post" asp-controller="Account" asp-action="SignIn" novalidate>
             <h1>Welcome Back</h1>
-            <p>Don't have an account yet?? <a asp-controller="Auth" asp-action="SignUp">Sign up here</a>.</p>
+            <p>Don't have an account yet?? <a asp-controller="Account" asp-action="SignUp">Sign up here</a>.</p>
             <div class="content">
-                <div id="form-invalid">
-                    @Model.ErrorMessage
-                </div>
+                @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"]?.ToString()))
+                {
+                    <div class="alert" id="form-invalid">
+                        @ViewData["ErrorMessage"]
+                    </div>
+                }
                 <div id="form-email" class="input-group">
                     <label asp-for="Form.Email"></label>
                     <span asp-validation-for="Form.Email"></span>
@@ -31,10 +34,8 @@
                     </div>
                 </div>
                 <button id="form-submit" class="btn-theme-s" type="submit">@Model.Title</button>
-                <a id="form-forgotpassword" asp-controller="Acount" asp-action="Forgot">Forgot your password?</a>
+                <a id="form-forgotpassword" asp-controller="Account" asp-action="Forgot">Forgot your password?</a>
             </div>
-
-
         </form>
     </div>
 </section>
