@@ -1,20 +1,11 @@
-﻿@inject SignInManager<UserEntity> _signInManager
-
-<header>
+﻿<header>
     <div class="container">
         <a id="logo" asp-controller="Home" asp-action="Index"><img src="~/Images/solid logo.svg" alt=""></a>
 
         <div id="menu">
             <nav>
                 <a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="overview">Overview</a>
-                @if (_signInManager.IsSignedIn(User))
-                {
-                    <a class="menu-link" asp-controller="Course" asp-action="Index" asp-fragment="courses">Courses</a>
-                }
-                else
-                {
-                    <a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="feature">Feature</a>
-                }
+                <a class="menu-link" asp-controller="Home" asp-action="Index" asp-fragment="features">Features</a>
                 <a class="menu-link" asp-controller="Contact" asp-action="Index">Contact</a>
             </nav>
         </div>
@@ -30,19 +21,8 @@
         </div>
 
         <div class="account-buttons">
-            @if (_signInManager.IsSignedIn(User))
-            {
-                
-                <a class="btn-gray" asp-controller="Account" asp-action="SignOut"><i class="fa-regular fa-right-from-bracket"></i><span>Sign Out</span></a>
-                <a class="btn-theme" asp-controller="Account" asp-action="Details"><i class="fa-regular fa-user"></i><span>My Account</span></a>
-            }
-            else
-            {
-                <a class="btn-gray" asp-controller="Account" asp-action="SignIn"><i class="fa-regular fa-right-to-bracket"></i><span>Sign in</span></a>
-                <a class="btn-theme" asp-controller="Account" asp-action="SignUp"><i class="fa-regular fa-user"></i><span>Sign Up</span></a>
-            }
-
-            
+            <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><i class="fa-regular fa-right-to-bracket"></i><span>Sign in</span></a>
+            <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><i class="fa-regular fa-user"></i><span>Sign Up</span></a>
         </div>
     </div>
 </header>

@@ -1,29 +1,23 @@
-﻿
-@inject FeatureService _featureService
-@{
-    var result = await _featureService.GetAllFeaturesAsync();
-    List<FeatureEntity> content = (List<FeatureEntity>)result.ContentResult!;
-    var feature = content.First();
-}
+﻿@model FeaturesViewModel
 
-@if (content != null)
-{
-    <section id="@feature.Id" class="feature">
-        <div class="container">
-            <div class="title">
-                <h1>@feature.Title</h1>
-                <p>@feature.Text</p>
-            </div>
-            <div class="feature-box">
-                @foreach (var item in feature.FeatureContent)
+<section id="@Model.Id" class="feature">
+    <div class="container">
+        <div class="title">
+            <h1>@Model.Title</h1>
+            <p>@Model.Text</p>
+        </div>
+        <div class="feature-box">
+            @if (Model.Features != null)
+            {
+                foreach (var feature in @Model.Features)
                 {
-                    <div id="@item.BoxId" class="features">
-                        <img src="@item.ImageUrl" alt="@item.AltText">
-                        <h5>@item.Title</h5>
-                        <p>@item.Text</p>
+                    <div id="@feature.BoxId" class="features">
+                        <img src="@feature.ImageUrl" alt="@feature.AltText">
+                        <h5>@feature.Title</h5>
+                        <p>@feature.Text</p>
                     </div>
                 }
-            </div>
+            }
         </div>
-    </section>
-}
+    </div>
+</section>
