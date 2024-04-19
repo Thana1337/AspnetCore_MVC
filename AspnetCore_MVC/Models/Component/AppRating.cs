@@ -4,7 +4,7 @@ public class AppRating
 {
     public string? Name { get; set; }
 
-    public ImageViewModel AppLink { get; set; } = null!;
+    public ImageViewModel AppLink { get; set; } = null;
 
     public string? LinkToStore { get; set; }
     public string? Award { get; set; }
