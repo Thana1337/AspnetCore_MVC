@@ -8,4 +8,10 @@ public class HomeController : Controller
     {
         return View();
     }
+
+    [Route("/error")]
+    public IActionResult Error(int statusCode)
+    {
+        return View();
+    }
 }

@@ -7,9 +7,9 @@ using System.Linq.Expressions;
 
 namespace Infrastructure.Repositories;
 
-public abstract class Repo<TEntity>(DataContext context) where TEntity : class
+public abstract class Repo<TEntity>(ApplicationDbContext context) where TEntity : class
 {
-    private readonly DataContext _context = context;
+    private readonly ApplicationDbContext _context = context;
 
 
     //SOLID : Single Responsibility Principle

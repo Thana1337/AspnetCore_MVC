@@ -8,10 +8,10 @@ using System.Linq.Expressions;
 
 namespace Infrastructure.Repositories;
 
-public class UserRepository(DataContext context) : Repo<UserEntity>(context)
+public class UserRepository(ApplicationDbContext context) : Repo<UserEntity>(context)
 {
 
-    private readonly DataContext _context = context;
+    private readonly ApplicationDbContext _context = context;
 
     public override async Task<ResponsResult> GetAllAsync()
     {

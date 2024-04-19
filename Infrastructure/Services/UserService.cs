@@ -46,6 +46,7 @@ public class UserService(UserRepository repository, AdderessService adderessServ
 
                 if (PasswordHasher.ValidateSecurePassword(model.Password, userEntity.Password, userEntity.SecurityKey))
                 {
+
                     return ResponseFactory.Ok();
                 }
             }
@@ -58,5 +59,7 @@ public class UserService(UserRepository repository, AdderessService adderessServ
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
 
     }
+
+
 
 }

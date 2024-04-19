@@ -1,20 +1,23 @@
 ﻿
 
+using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
 namespace Infrastructure.Entities;
 
-public class UserEntity
+public class UserEntity : IdentityUser
 {
     private static readonly List<AddressEntity> addressEntities = new List<AddressEntity>();
 
     [Key]
-    public string Id { get; set; } = null!;
+    [Required]
+    [Display(Name = "First Name")]
+    [ProtectedPersonalData]
     public string FirstName { get; set; } = null!;
-
+    [Required]
+    [Display(Name = "First Name")]
+    [ProtectedPersonalData]
     public string LastName { get; set; } = null!;
-
-    public string Email { get; set; } = null!;
 
     public string Password { get; set; } = null!;
 
