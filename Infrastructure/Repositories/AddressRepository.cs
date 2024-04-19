@@ -4,8 +4,10 @@ using Infrastructure.Entities;
 
 namespace Infrastructure.Repositories;
 
-public class AddressRepository(DataContext context) : Repo<AddressEntity>(context)
+public class AddressRepository(ApplicationDbContext context) : Repo<AddressEntity>(context)
 {
 
-    private readonly DataContext _context = context;
+    private readonly ApplicationDbContext _context = context;
 }
+
+

@@ -1,10 +1,12 @@
 
+
 using Infrastructure.Context;
-using Infrastructure.Contexts;
+using Infrastructure.Entities;
 using Infrastructure.Models.Identity;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace AspnetCore_MVC;
 
@@ -17,17 +19,17 @@ public class Program
         builder.Services.AddControllersWithViews();
 
 
-        builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+        //builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
 
         builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
-        builder.Services.AddDefaultIdentity<ApplicationUser>(x =>
+        builder.Services.AddDefaultIdentity<UserEntity>(x =>
         {
             x.User.RequireUniqueEmail = true;
             x.SignIn.RequireConfirmedAccount = false;
             x.Password.RequiredLength = 8;
 
         }).AddEntityFrameworkStores<ApplicationDbContext>();
-       
+
         //Repositories
         builder.Services.AddScoped<AddressRepository>();
         builder.Services.AddScoped<UserRepository>();
@@ -39,25 +41,26 @@ public class Program
         builder.Services.AddScoped<UserService>();
         builder.Services.AddScoped<FeatureService>();
 
-        builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", x =>
-        {
-            x.LoginPath = "/signin";
-            x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-        });
+        //builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", x =>
+        //{
+        //    x.LoginPath = "/signin";
+        //    x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+        //});
  
 
 
 
         var app = builder.Build();
         app.UseHsts();
+        app.UseStatusCodePagesWithReExecute("/error", "?statusCode={0}");
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
-        app.UseAuthorization(); //vad får du göra
-        app.UseAuthentication(); //vem är du
+        app.UseAuthorization(); //vad fï¿½r du gï¿½ra
+        app.UseAuthentication(); //vem ï¿½r du
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Account}/{action=Index}/{id?}");
+            pattern: "{controller=Account}/{action=SignUp}/{id?}");
 
         app.Run();
     }

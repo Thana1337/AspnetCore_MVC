@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories;
 
-public partial class FeatureRepository(DataContext context) : Repo<FeatureEntity>(context)
+public partial class FeatureRepository(ApplicationDbContext context) : Repo<FeatureEntity>(context)
 {
 
-    private readonly DataContext _context = context;
+    private readonly ApplicationDbContext _context = context;
 
     public override async Task<ResponsResult> GetAllAsync()
     {

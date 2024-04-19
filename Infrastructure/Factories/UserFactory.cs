@@ -38,6 +38,7 @@ public class UserFactory
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Email = model.Email,
+                UserName = model.Email,
                 Password = password,
                 SecurityKey = sercurityKey,
                 Created = date,
