@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspnetCore_MVC", "AspnetCore_MVC\AspnetCore_MVC.csproj", "{AAA0116E-C386-49BB-BD1E-84A92A08E34D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspnetCore_MVC", "AspnetCore_MVC\AspnetCore_MVC.csproj", "{AAA0116E-C386-49BB-BD1E-84A92A08E34D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{333E1756-EB43-4218-8944-EB582B3B8B6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AAA0116E-C386-49BB-BD1E-84A92A08E34D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAA0116E-C386-49BB-BD1E-84A92A08E34D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAA0116E-C386-49BB-BD1E-84A92A08E34D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{333E1756-EB43-4218-8944-EB582B3B8B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{333E1756-EB43-4218-8944-EB582B3B8B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{333E1756-EB43-4218-8944-EB582B3B8B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{333E1756-EB43-4218-8944-EB582B3B8B6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
