@@ -1,17 +1,17 @@
-﻿@model ShowcaseViewmodel
+﻿@model AspnetCore_MVC.ViewModels.HomeIndexViewModel
 
-<section id="@Model.Id" class="showcase">
-    <img class="background-img" src="@Model.ShowcaseImg.ImageUrl" alt="@Model.ShowcaseImg.AltText">
+<section id="@Model.ShowCase.Id" class="showcase">
+    <img class="background-img" src="@Model.ShowCase.ShowcaseImg.ImageUrl" alt="@Model.ShowCase.ShowcaseImg.AltText">
     <div class="container">
         <div class="content">
-            <h1>@Model.Title</h1>
-            <p>@Model.Text</p>
-            <a class="btn-theme-s" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName">@Model.Link.Text</a>
-            <h6>@Model.BrandText</h6>
+            <h1>@Model.ShowCase.Title</h1>
+            <p>@Model.ShowCase.Text</p>
+            <a class="btn-theme-s" asp-controller="@Model.ShowCase.Link.ControllerName" asp-action="@Model.ShowCase.Link.ActionName">@Model.ShowCase.Link.Text</a>
+            <h6>@Model.ShowCase.BrandText</h6>
             <div class="brands">
-                @if (Model.Brands != null)
+                @if (Model.ShowCase.Brands != null)
                 {
-                    foreach (var brand in @Model.Brands)
+                    foreach (var brand in @Model.ShowCase.Brands)
                     {
                         <img src="@brand.ImageUrl" alt="@brand.AltText">
                     }

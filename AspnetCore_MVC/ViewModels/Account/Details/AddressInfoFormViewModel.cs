@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.ComponentModel.DataAnnotations;
 
-namespace AspnetCore_MVC.ViewModels.Account;
+namespace AspnetCore_MVC.ViewModels.Account.Details;
 
 public class AddressInfoFormViewModel
 {

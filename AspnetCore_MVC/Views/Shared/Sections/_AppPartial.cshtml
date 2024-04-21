@@ -1,17 +1,17 @@
-﻿@model AppViewModel
+﻿@model AspnetCore_MVC.ViewModels.HomeIndexViewModel
 
-<section id="@Model.Id" class="app">
+<section id="@Model.App.Id" class="app">
     <div class="container">
         <div id="bg">
-            <img  src="@Model.Image.ImageUrl" alt="@Model.Image.AltText"/>
+            <img  src="@Model.App.Image.ImageUrl" alt="@Model.App.Image.AltText"/>
         </div>
         <div class="content">
-            <h1>@Model.Title</h1>
+            <h1>@Model.App.Title</h1>
             <div>
                 <div class="applications">
-                    @if (Model.Apps != null)
+                    @if (Model.App.Apps != null)
                     {
-                        foreach (var application in @Model.Apps)
+                        foreach (var application in @Model.App.Apps)
                         {
                             <div id="apprating">
                                 <p>@application.Name</p>

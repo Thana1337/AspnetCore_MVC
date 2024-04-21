@@ -1,9 +1,9 @@
 ﻿using Infrastructure.Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace AspnetCore_MVC.ViewModels.Account;
+namespace AspnetCore_MVC.ViewModels.Account.Details;
 
-public class BasicInfoFormViewModel 
+public class BasicInfoFormViewModel
 {
     public string UserId { get; set; } = null!;
 

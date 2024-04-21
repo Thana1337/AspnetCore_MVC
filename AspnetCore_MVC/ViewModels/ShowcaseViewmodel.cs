@@ -2,14 +2,14 @@
 
 namespace AspnetCore_MVC.ViewModels;
 
-public class ShowcaseViewmodel
+public class ShowCaseViewModel
 {
-    public string? Id { get; set; }
+    public string Id { get; set; } = null!;
     public ImageViewModel ShowcaseImg { get; set; } = null!;
-    public string? Title { get; set; }
-    public string? Text { get; set; }
+    public string Title { get; set; } = null!;
+    public string Text { get; set; } = null!;
 
-    public string? BrandText { get; set; }
+    public string BrandText { get; set; } = null!;
 
     public LinkViewModel Link { get; set; } = new LinkViewModel();
 

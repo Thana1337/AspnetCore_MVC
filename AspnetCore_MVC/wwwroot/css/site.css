@@ -620,6 +620,80 @@ footer .container .social-media {
   }
 }
 
+section.feature {
+  background-color: #F3F6FF;
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+section.feature .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+section.feature .container .title h1 {
+  font-weight: 900;
+}
+section.feature .container .title p {
+  font-weight: 600;
+  color: gray;
+}
+section.feature .container .feature-box {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+section.feature .container .feature-box .features {
+  padding: 50px;
+  text-align: center;
+  border-right: 1px solid #D9D9D9;
+  border-bottom: 1px solid #D9D9D9;
+  transition: all 0.5s;
+}
+section.feature .container .feature-box .features:hover {
+  background-color: #FFFFFF;
+  cursor: pointer;
+}
+section.feature .container .feature-box #box-2 {
+  border-right: 0px;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-2 {
+    border-right: 1px solid #D9D9D9;
+  }
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-3 {
+    border-right: 0px;
+  }
+}
+section.feature .container .feature-box #box-4 {
+  border-right: 0px;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-4 {
+    border: 0px;
+  }
+}
+section.feature .container .feature-box #box-5 {
+  border-bottom: 0px;
+}
+@media (min-width: 992px) {
+  section.feature .container .feature-box #box-5 {
+    border-left: 1px solid #D9D9D9;
+  }
+}
+section.feature .container .feature-box #box-6 {
+  border: 0px;
+}
+
 #signup {
   height: 100%;
 }
@@ -796,119 +870,229 @@ section.app .container .content .applications #appbutton {
   grid-area: link;
 }
 
-section.account .container {
+sectionaccount-details.account .container {
   display: grid;
   grid-template-columns: 2fr 5fr;
   gap: 150px;
   margin-bottom: 70px;
 }
-section.account .container aside {
+sectionaccount-details.account .container aside {
   border-right: 1px solid #E2E5F1;
   padding-right: 20px;
 }
-section.account .container aside .profile-info {
+sectionaccount-details.account .container aside .profile-info {
   margin: 29px;
   text-align: center;
 }
-section.account .container aside .profile-info h5 {
+sectionaccount-details.account .container aside .profile-info h5 {
   margin-top: 15px;
   margin-bottom: 0;
 }
-section.account .container aside .profile-info p {
+sectionaccount-details.account .container aside .profile-info p {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
   font-family: "Manrope", sans-serif;
   font-size: 16px !important;
 }
-section.account .container aside nav {
+sectionaccount-details.account .container aside nav {
   margin-top: 50px;
   text-align: left;
 }
-section.account .container aside nav a {
+sectionaccount-details.account .container aside nav a {
   margin: 10px 0;
   text-align: left;
   justify-content: flex-start;
 }
-section.account .container aside nav .btn-theme-s {
+sectionaccount-details.account .container aside nav .btn-theme-s {
   text-align: left;
   justify-content: flex-start;
 }
-section.account .container .details {
+sectionaccount-details.account .container .details {
   margin-top: 50px;
   width: 100%;
 }
-section.account .container .details .basic-info form {
+sectionaccount-details.account .container .details .basic-info form {
   padding: 1rem;
 }
-section.account .container .details .basic-info form h5 {
+sectionaccount-details.account .container .details .basic-info form h5 {
   color: #6366F1;
 }
-section.account .container .details .basic-info form .content {
+sectionaccount-details.account .container .details .basic-info form .content {
   display: grid;
   gap: 1rem 2rem;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "firstname lastname" "email phone" "bio bio" "buttons buttons";
 }
-section.account .container .details .basic-info form .content #form-firstname {
+sectionaccount-details.account .container .details .basic-info form .content #form-firstname {
   grid-area: firstname;
 }
-section.account .container .details .basic-info form .content #form-lastname {
+sectionaccount-details.account .container .details .basic-info form .content #form-lastname {
   grid-area: lastname;
 }
-section.account .container .details .basic-info form .content #form-email {
+sectionaccount-details.account .container .details .basic-info form .content #form-email {
   grid-area: email;
 }
-section.account .container .details .basic-info form .content #form-phone {
+sectionaccount-details.account .container .details .basic-info form .content #form-phone {
   grid-area: phone;
 }
-section.account .container .details .basic-info form .content #form-bio {
+sectionaccount-details.account .container .details .basic-info form .content #form-bio {
   grid-area: bio;
 }
-section.account .container .details .basic-info form .content #form-bio span {
+sectionaccount-details.account .container .details .basic-info form .content #form-bio span {
   color: #B4B7C9;
   font-weight: 400;
 }
-section.account .container .details .basic-info form .content .form-buttons {
+sectionaccount-details.account .container .details .basic-info form .content .form-buttons {
   grid-area: buttons;
   margin: 20px 0;
   display: flex;
   gap: 20px;
 }
-section.account .container .details .adress-info {
+sectionaccount-details.account .container .details .adress-info {
   margin-top: 30px;
 }
-section.account .container .details .adress-info form {
+sectionaccount-details.account .container .details .adress-info form {
   padding: 1rem;
 }
-section.account .container .details .adress-info form h5 {
+sectionaccount-details.account .container .details .adress-info form h5 {
   color: #6366F1;
 }
-section.account .container .details .adress-info form .content {
+sectionaccount-details.account .container .details .adress-info form .content {
   display: grid;
   gap: 1rem 2rem;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "addressline_1 addressline_1" "addressline_2 addressline_2" "postalcode city" "buttons buttons";
 }
-section.account .container .details .adress-info form .content #form-addressline-1 {
+sectionaccount-details.account .container .details .adress-info form .content #form-addressline-1 {
   grid-area: addressline_1;
 }
-section.account .container .details .adress-info form .content #form-addressline-2 {
+sectionaccount-details.account .container .details .adress-info form .content #form-addressline-2 {
   grid-area: addressline_2;
 }
-section.account .container .details .adress-info form .content #form-addressline-2 span {
+sectionaccount-details.account .container .details .adress-info form .content #form-addressline-2 span {
   color: #B4B7C9;
   font-weight: 400;
 }
-section.account .container .details .adress-info form .content #form-postalcode {
+sectionaccount-details.account .container .details .adress-info form .content #form-postalcode {
   grid-area: postalcode;
 }
-section.account .container .details .adress-info form .content #form-city {
+sectionaccount-details.account .container .details .adress-info form .content #form-city {
   grid-area: city;
 }
-section.account .container .details .adress-info form .content .form-buttons {
+sectionaccount-details.account .container .details .adress-info form .content .form-buttons {
   grid-area: buttons;
   margin: 20px 0;
   display: flex;
   gap: 20px;
+}
+
+section#account-security.account .container {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 150px;
+  margin-bottom: 70px;
+}
+section#account-security.account .container aside {
+  border-right: 1px solid #E2E5F1;
+  padding-right: 20px;
+}
+section#account-security.account .container aside .profile-info {
+  margin: 29px;
+  text-align: center;
+}
+section#account-security.account .container aside .profile-info h5 {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+section#account-security.account .container aside .profile-info p {
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 16px !important;
+}
+section#account-security.account .container aside nav {
+  margin-top: 50px;
+  text-align: left;
+}
+section#account-security.account .container aside nav a {
+  margin: 10px 0;
+  text-align: left;
+  justify-content: flex-start;
+}
+section#account-security.account .container aside nav .btn-theme-s {
+  text-align: left;
+  justify-content: flex-start;
+}
+section#account-security.account .container .details {
+  margin-top: 50px;
+  width: 100%;
+}
+section#account-security.account .container .details .basic-info form {
+  padding: 1rem;
+}
+section#account-security.account .container .details .basic-info form h5 {
+  color: #6366F1;
+}
+section#account-security.account .container .details .basic-info form .content {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "old old" "new confirm";
+}
+section#account-security.account .container .details .basic-info form .content #form-oldpassword {
+  grid-area: old;
+}
+section#account-security.account .container .details .basic-info form .content #form-newpassword {
+  grid-area: new;
+}
+section#account-security.account .container .details .basic-info form .content #form-confirmpassword {
+  grid-area: confirm;
+}
+section#account-security.account .container .details .basic-info form .form-buttons {
+  grid-area: buttons;
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+}
+section#account-security.account .container .adress-info {
+  margin-top: 30px;
+}
+section#account-security.account .container .adress-info form {
+  padding: 1rem;
+}
+section#account-security.account .container .adress-info form h5 {
+  color: #6366F1;
+}
+section#account-security.account .container .adress-info form .content {
+  display: flex;
+}
+section#account-security.account .container .adress-info form .content #form-city {
+  grid-area: city;
+}
+section#account-security.account .container .adress-info form .content .form-buttons {
+  grid-area: buttons;
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+}
+
+section.error-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.error-404 .container {
+  text-align: center;
+  max-width: 600px;
+}
+section.error-404 .container .content div {
+  margin-bottom: 20px;
+}
+section.error-404 .container .content img {
+  max-width: 100%;
+}
+section.error-404 .container .content .nav-wrapper {
+  display: inline-block;
 }

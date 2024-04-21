@@ -7,29 +7,19 @@ namespace AspnetCore_MVC.ViewModels;
 
 public class HomeIndexViewModel
 {
-    private readonly FeatureService _featureService;
+    public string Title { get; set; } = null!;
+        
+    public FeatureViewModel Feature { get; set; } = null!;
+    public ShowCaseViewModel ShowCase { get; set; } = null!;
+    public MockupViewModel Mockup { get; set; } = null!;
+    public ManageWorkViewModel ManageWork { get; set; } = null!;
+    public AppViewModel App { get; set; } = null!;
 
-    public HomeIndexViewModel(FeatureService featureService)
-    {
-        _featureService = featureService;
-
-        Task.Run(async () =>
-        {
-            var result = await _featureService.GetAllFeaturesAsync();
-            var content = (FeatureEntity)result.ContentResult!;
-
-            Features.Title = content.Title;
-            Features.Text = content.Text;
-
-            foreach (var item in content.FeatureContent)
-                Features.FeatureContent.Add(item);
-
-        });
-    }
-
-    public FeatureViewModel Features { get; set; } = new FeatureViewModel();
 
 }
+
+
+
 
 
 

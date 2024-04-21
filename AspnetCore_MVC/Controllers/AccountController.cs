@@ -1,5 +1,5 @@
 ﻿using AspnetCore_MVC.ViewModels;
-using AspnetCore_MVC.ViewModels.Account;
+using AspnetCore_MVC.ViewModels.Account.Details;
 using Infrastructure.Context;
 using Infrastructure.Entities;
 using Infrastructure.Factories;
@@ -342,6 +342,8 @@ public class AccountController(UserManager<UserEntity> userManager, SignInManage
     {
         ModelState.Remove("ProfileInfoForm");
         ModelState.Remove("BasicInfoForm");
+        ModelState.Remove("DeleteForm");
+        ModelState.Remove("PassWordForm");
         if (ModelState.IsValid)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -391,10 +393,38 @@ public class AccountController(UserManager<UserEntity> userManager, SignInManage
         }
 
         // If model state is not valid, return to the view with validation errors
-        return View(viewModel);
+        return View("Details",viewModel);
     }
 
     #endregion
+
+
+    #region Security
+    [HttpGet]
+    [Route("/account/security")]
+    public async Task<IActionResult> Security()
+    {
+        if (!User.Identity!.IsAuthenticated)
+        {
+            return RedirectToAction("SignIn", "Account");
+        }
+
+        var user = await _userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            return RedirectToAction("SignIn", "Account");
+        }
+
+        var viewModel = new AccountDetailsViewModel();
+
+        viewModel.ProfileInfoForm = await PopulateProfileInfoAsync();
+
+        return View(viewModel);
+    }
+
+
+    #endregion
+
 }
 
 

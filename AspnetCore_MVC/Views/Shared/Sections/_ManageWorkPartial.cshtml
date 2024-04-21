@@ -1,17 +1,17 @@
-﻿@model ManageWorkViewModel
+﻿@model AspnetCore_MVC.ViewModels.HomeIndexViewModel
 
-<section id="@Model.Id" class="managework">
+<section id="@Model.ManageWork.Id" class="managework">
 
     <div class="container">
         <div>
-            <img src="@Model.ManageWorkImg.ImageUrl" alt="@Model.ManageWorkImg.AltText" />
+            <img src="@Model.ManageWork.ManageWorkImg.ImageUrl" alt="@Model.ManageWork.ManageWorkImg.AltText" />
         </div>
         <div class="content">
-            <h2>@Model.Title</h2>
+            <h2>@Model.ManageWork.Title</h2>
             <div>
-                @if (Model.ManageWorkLists != null)
+                @if (Model.ManageWork.ManageWorkLists != null)
                 {
-                    foreach (var managework in @Model.ManageWorkLists)
+                    foreach (var managework in @Model.ManageWork.ManageWorkLists)
                     {
                         <div class="list">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,8 +24,8 @@
                 }
             </div>
             <div>
-                <a class="btn-theme-s" asp-controller="@Model.Link.ControllerName" asp-action="@Model.Link.ActionName">
-                    @Model.Link.Text
+                <a class="btn-theme-s" asp-controller="@Model.ManageWork.Link.ControllerName" asp-action="@Model.ManageWork.Link.ActionName">
+                    @Model.ManageWork.Link.Text
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.41083 10.4108L5.58917 11.5892L11.1783 5.99999L5.58917 0.410828L4.41083 1.58916L7.98833 5.16666H0V6.83333H7.98833L4.41083 10.4108Z" fill="white" />
                     </svg>

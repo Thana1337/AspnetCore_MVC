@@ -55,7 +55,7 @@ public class Program
         app.UseAuthorization(); //vad f�r du g�ra
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Account}/{action=SignIn}/{id?}");
+            pattern: "{controller=Home}/{action=Index}/{id?}");
 
         app.Run();
     }
