@@ -8,7 +8,7 @@ public enum StatusCode
 
 public class ResponsResult
 {
- public StatusCode StatusCode {  get; set; }
+    public Infrastructure.Models.StatusCode StatusCode {  get; set; }
 
     public object? ContentResult { get; set; }
 

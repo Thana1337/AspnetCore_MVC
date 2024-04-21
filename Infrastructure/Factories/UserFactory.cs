@@ -19,6 +19,7 @@ public class UserFactory
                 Id = Guid.NewGuid().ToString(), 
                 Created = date,
                 Modified = date,
+                Addresses = new List<AddressEntity>()
             };
         }
         catch { }
@@ -39,10 +40,10 @@ public class UserFactory
                 LastName = model.LastName,
                 Email = model.Email,
                 UserName = model.Email,
-                Password = password,
                 SecurityKey = sercurityKey,
                 Created = date,
                 Modified = date,
+                Addresses = new List<AddressEntity>()
             };
         }
         catch { }

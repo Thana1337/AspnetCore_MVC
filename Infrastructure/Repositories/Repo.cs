@@ -127,8 +127,5 @@ public abstract class Repo<TEntity>(ApplicationDbContext context) where TEntity 
         {
             return ResponseFactory.Error(ex.Message);
         }
-
     }
-
-
 }

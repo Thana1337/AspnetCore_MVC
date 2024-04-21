@@ -1,26 +1,19 @@
 
-﻿@model AccountDetailViewModel
-=======
-﻿@model AccountDetailsViewmodel
-
+@model AccountDetailsViewModel
 
 @{
-    ViewData["Title"] = $"Account Details for {Model.BasicInfo.FirstName} {Model.BasicInfo.LastName}";
+    ViewData["Title"] = $"Account Details for {Model.ProfileInfoForm.FirstName} {Model.ProfileInfoForm.LastName}";
 }
 
 
 
 <section id="account-details" class="account">
     <div class="container">
-=======
-<div class="container">
-    <section id="account-details">
-
         <aside>
             <div class="profile-info">
-                <img src="@Model.BasicInfo.ProfileImg" alt='@($"{Model.BasicInfo.FirstName} {Model.BasicInfo.LastName}")' />
-                <h5>@($"{Model.BasicInfo.FirstName} {Model.BasicInfo.LastName}")</h5>
-                <p>@Model.BasicInfo.Email</p>
+                <img src="@Model.ProfileInfoForm.ProfileImg" alt='@($"{Model.ProfileInfoForm.FirstName} {Model.ProfileInfoForm.LastName}")' />
+                <h3>@Model.ProfileInfoForm.FirstName @Model.ProfileInfoForm.LastName</h3>
+                <p>@Model.ProfileInfoForm.Email</p>
             </div>
             <nav>
                 <a class="btn-theme-s" asp-controller="Account" asp-action="Details">Account Details</a>
@@ -28,41 +21,39 @@
                 <a class="btn-transparent" asp-controller="Account" asp-action="Security">Security</a>
                 <a class="btn-transparent" asp-controller="Course" asp-action="SavedCourses">Saved Courses</a>
                 <a class="btn-transparent" asp-controller="Account" asp-action="SignOut">Sign Out</a>
-=======
-                <a class="btn-transparent" asp-controller="Auth" asp-action="SignOut">Sign Out</a>
-
             </nav>
         </aside>
+        
 
         <div class="details">
             <section class="basic-info">
-                <form method="post" asp-controller="Account" asp-action="BasicInfo">
+                <form method="post" asp-controller="Account" asp-action="SaveBasicInfo" novalidate>
                     <h2>Account Info</h2>
                     <h5>Basic Info</h5>
                     <div class="content">
                         <div id="form-firstname" class="input-group">
-                            <label asp-for="BasicInfo.FirstName"></label>
-                            <span asp-validation-for="BasicInfo.FirstName"></span>
-                            <input asp-for="BasicInfo.FirstName" />
+                            <label asp-for="BasicInfoForm.FirstName"></label>
+                            <span asp-validation-for="BasicInfoForm.FirstName"></span>
+                            <input asp-for="BasicInfoForm.FirstName" />
                         </div>
                         <div id="form-lastname" class="input-group">
-                            <label asp-for="BasicInfo.LastName"></label>
-                            <span asp-validation-for="BasicInfo.LastName"></span>
-                            <input asp-for="BasicInfo.LastName" />
+                            <label asp-for="BasicInfoForm.LastName"></label>
+                            <span asp-validation-for="BasicInfoForm.LastName"></span>
+                            <input asp-for="BasicInfoForm.LastName" />
                         </div>
                         <div id="form-email" class="input-group">
-                            <label asp-for="BasicInfo.Email"></label>
-                            <span asp-validation-for="BasicInfo.Email"></span>
-                            <input asp-for="BasicInfo.Email" />
+                            <label asp-for="BasicInfoForm.Email"></label>
+                            <span asp-validation-for="BasicInfoForm.Email"></span>
+                            <input asp-for="BasicInfoForm.Email" />
                         </div>
                         <div id="form-phone" class="input-group">
-                            <label asp-for="BasicInfo.Phone"></label>
-                            <span asp-validation-for="BasicInfo.Phone"></span>
-                            <input asp-for="BasicInfo.Phone" />
+                            <label asp-for="BasicInfoForm.PhoneNumber"></label>
+                            <span asp-validation-for="BasicInfoForm.PhoneNumber"></span>
+                            <input asp-for="BasicInfoForm.PhoneNumber" />
                         </div>
                         <div id="form-bio" class="input-group">
-                            <label asp-for="BasicInfo.Biography">Bio <span>(optional)</span></label>
-                            <textarea asp-for="BasicInfo.Biography"></textarea>
+                            <label asp-for="BasicInfoForm.Biography">Bio <span>(optional)</span></label>
+                            <textarea asp-for="BasicInfoForm.Biography"></textarea>
                         </div>
 
                         <div class="form-buttons">
@@ -74,28 +65,28 @@
             </section>
             <hr />
             <section class="adress-info">
-                <form method="post" asp-controller="Account" asp-action="AddressInfo">
+                <form method="post" asp-controller="Account" asp-action="SaveAddressInfo" novalidate >
                     <h5>Address</h5>
                     <div class="content">
                         <div id="form-addressline-1" class="input-group">
-                            <label asp-for="AddressInfo.Adressline_1"></label>
-                            <span asp-validation-for="AddressInfo.Adressline_1"></span>
-                            <input asp-for="AddressInfo.Adressline_1" />
+                            <label asp-for="AddressInfoForm.Addressline_1"></label>
+                            <span asp-validation-for="AddressInfoForm.Addressline_1"></span>
+                            <input asp-for="AddressInfoForm.Addressline_1" />
                         </div>
                         <div id="form-addressline-2" class="input-group">
-                            <label asp-for="AddressInfo.Adressline_2"> Address line 2 <span>(optional)</span></label>
-                            <span asp-validation-for="AddressInfo.Adressline_2"></span>
-                            <input asp-for="AddressInfo.Adressline_2" />
+                            <label asp-for="AddressInfoForm.Addressline_2"> Address line 2 <span>(optional)</span></label>
+                            <span asp-validation-for="AddressInfoForm.Addressline_2"></span>
+                            <input asp-for="AddressInfoForm.Addressline_2" />
                         </div>
                         <div id="form-postalcode" class="input-group">
-                            <label asp-for="AddressInfo.Postalcode"></label>
-                            <span asp-validation-for="AddressInfo.Postalcode"></span>
-                            <input asp-for="AddressInfo.Postalcode" />
+                            <label asp-for="AddressInfoForm.Postalcode"></label>
+                            <span asp-validation-for="AddressInfoForm.Postalcode"></span>
+                            <input asp-for="AddressInfoForm.Postalcode" />
                         </div>
                         <div id="form-city" class="input-group">
-                            <label asp-for="AddressInfo.City"></label>
-                            <span asp-validation-for="AddressInfo.City"></span>
-                            <input asp-for="AddressInfo.City" />
+                            <label asp-for="AddressInfoForm.City"></label>
+                            <span asp-validation-for="AddressInfoForm.City"></span>
+                            <input asp-for="AddressInfoForm.City" />
                         </div>
                         <div class="form-buttons">
                             <button class="btn-gray" type="reset">Cancel</button>
@@ -105,13 +96,7 @@
                 </form>
             </section>
         </div>
-
-
     </div>
 </section>
 
-
-=======
-    </section>
-</div>
 

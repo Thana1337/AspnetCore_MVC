@@ -1,10 +1,12 @@
-﻿
+﻿using Infrastructure.Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace Infrastructure.Models;
+namespace AspnetCore_MVC.ViewModels.Account;
 
-public class AccountDetailBasicInfo
+public class BasicInfoFormViewModel 
 {
+    public string UserId { get; set; } = null!;
+
 
     [DataType(DataType.ImageUrl)]
     public string? ProfileImg { get; set; }
@@ -26,7 +28,7 @@ public class AccountDetailBasicInfo
     [Display(Name = "Phone", Prompt = "Enter your phone", Order = 3)]
     [DataType(DataType.PhoneNumber)]
     [Required(ErrorMessage = "You must enter your phone number")]
-    public string Phone { get; set; } = null!;
+    public string PhoneNumber { get; set; } = null!;
 
     [Display(Name = "Bio", Prompt = "Add a short bio...", Order = 4)]
     [DataType(DataType.MultilineText)]

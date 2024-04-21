@@ -1,8 +1,5 @@
-
-
 using Infrastructure.Context;
 using Infrastructure.Entities;
-using Infrastructure.Models.Identity;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +15,6 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddControllersWithViews();
 
-
-        //builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
 
         builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
         builder.Services.AddDefaultIdentity<UserEntity>(x =>
@@ -37,16 +32,16 @@ public class Program
         builder.Services.AddScoped<FeatureContentRepository>();
 
         //Services
-        builder.Services.AddScoped<AdderessService>();
+        builder.Services.AddScoped<AddressService>();
         builder.Services.AddScoped<UserService>();
         builder.Services.AddScoped<FeatureService>();
 
-        //builder.Services.AddAuthentication("AuthCookie").AddCookie("AuthCookie", x =>
-        //{
-        //    x.LoginPath = "/signin";
-        //    x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-        //});
- 
+        builder.Services.AddAuthentication().AddCookie( x =>
+        {
+            x.LoginPath = "/signin";
+            x.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+        });
+
 
 
 
@@ -56,11 +51,11 @@ public class Program
         app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
+        //app.UserSessionValidation();
         app.UseAuthorization(); //vad f�r du g�ra
-        app.UseAuthentication(); //vem �r du
         app.MapControllerRoute(
             name: "default",
-            pattern: "{controller=Account}/{action=SignUp}/{id?}");
+            pattern: "{controller=Account}/{action=SignIn}/{id?}");
 
         app.Run();
     }

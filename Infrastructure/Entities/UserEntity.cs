@@ -7,30 +7,26 @@ namespace Infrastructure.Entities;
 
 public class UserEntity : IdentityUser
 {
-    private static readonly List<AddressEntity> addressEntities = new List<AddressEntity>();
-
     [Key]
     [Required]
     [Display(Name = "First Name")]
     [ProtectedPersonalData]
     public string FirstName { get; set; } = null!;
+
     [Required]
-    [Display(Name = "First Name")]
+    [Display(Name = "Last Name")]
     [ProtectedPersonalData]
     public string LastName { get; set; } = null!;
 
-    public string Password { get; set; } = null!;
-
     public string SecurityKey { get; set; } = null!;
 
-    public string? Biography {  get; set; }
-
-    public string? Phone { get; set; }
-
+    [Display(Name = "Bio")]
+    [DataType(DataType.MultilineText)]
+    public string? Biography { get; set; }
 
     public DateTime? Created { get; set; }
     public DateTime? Modified { get; set; }
 
-    public int? AddressId { get; set; }
-    public AddressEntity? Address { get; set; }
+    // Navigation property for addresses
+    public ICollection<AddressEntity> Addresses { get; set; } = new List<AddressEntity>();
 }

@@ -13,35 +13,22 @@ public class AddressFactory
         try
         {
             return new AddressEntity();
+
         }
         catch { }
         return null!;
     }
-    public static AddressEntity Create(string streetName, string postalCode, string city)
+    
+    public static AddressEntity Create(string addressline_1, string? addressline_2,  string postalCode, string? city)
     {
         try
         {
             return new AddressEntity
             {
-                StreetName = streetName,
+                Addressline_1 = addressline_1,
+                Addressline_2 = addressline_2,
                 PostalCode = postalCode,
                 City = city
-            };
-        }
-        catch { }
-        return null!;
-    }
-
-    public static AddressModel Create(AddressEntity entity)
-    {
-        try
-        {
-            return new AddressModel
-            {
-                Id = entity.Id,
-                StreetName = entity.StreetName,
-                PostalCode = entity.PostalCode,
-                City = entity.City
             };
         }
         catch { }

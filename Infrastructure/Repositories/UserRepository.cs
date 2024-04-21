@@ -18,7 +18,7 @@ public class UserRepository(ApplicationDbContext context) : Repo<UserEntity>(con
         try
         {
             IEnumerable<UserEntity> result = await _context.Users
-                .Include(i => i.Address)
+                .Include(i => i.Addresses)
                 .ToListAsync();
 
             if (result == null)
@@ -37,12 +37,40 @@ public class UserRepository(ApplicationDbContext context) : Repo<UserEntity>(con
         try
         {
             var result = await _context.Users
-                .Include(i => i.Address)
+                .Include(i => i.Addresses)
                 .FirstOrDefaultAsync(predicate);
             if (result == null)
                 return ResponseFactory.NotFound();
 
             return ResponseFactory.Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return ResponseFactory.Error(ex.Message);
+        }
+    }
+
+    public async Task<ResponsResult> SaveAsync(UserEntity user)
+    {
+        try
+        {
+            _context.Users.Add(user);
+            await _context.SaveChangesAsync();
+            return ResponseFactory.Ok(user);
+        }
+        catch (Exception ex)
+        {
+            return ResponseFactory.Error(ex.Message);
+        }
+    }
+
+    public async Task<ResponsResult> UpdateAsync(UserEntity user)
+    {
+        try
+        {
+            _context.Entry(user).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return ResponseFactory.Ok(user);
         }
         catch (Exception ex)
         {
