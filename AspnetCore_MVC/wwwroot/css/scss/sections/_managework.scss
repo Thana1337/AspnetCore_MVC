@@ -3,10 +3,16 @@
         .container {
             display: flex;
             align-items: center;
+            justify-content: center;
             img{
                 margin-right: 50px;
-            }
+                display: none;
 
+                @include xl{
+                    display: block;
+                }
+
+            }
             .content {
                 padding: 50px;
                 h2{

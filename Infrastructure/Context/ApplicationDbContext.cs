@@ -14,14 +14,9 @@ namespace Infrastructure.Context
 
         public DbSet<FeatureContentEntity> FeatureContent { get; set; }
 
+        public DbSet<CourseEntity> Courses { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<AddressEntity>()
-        //        .HasOne(a => a.User)
-        //        .WithMany(u => u.Addresses)
-        //        .HasForeignKey(a => a.UserId);
-        //}
+        public DbSet<SubscribeEntity> Subscribers { get; set; } 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

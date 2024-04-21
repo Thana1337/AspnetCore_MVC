@@ -9,10 +9,12 @@
             <h1>@Model.App.Title</h1>
             <div>
                 <div class="applications">
+
                     @if (Model.App.Apps != null)
                     {
                         foreach (var application in @Model.App.Apps)
                         {
+                            <div class="app-content">
                             <div id="apprating">
                                 <p>@application.Name</p>
                                 <div class="rating">
@@ -30,9 +32,10 @@
                                     <img src="@application.AppLink.ImageUrl" alt="@application.AppLink.AltText" />
                                 </a>
                             </div>
-
+                            </div>
                         }
                     }
+
                 </div>
             </div>
         </div>

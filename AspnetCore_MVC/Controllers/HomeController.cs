@@ -1,6 +1,9 @@
 ﻿using AspnetCore_MVC.Models.Component;
 using AspnetCore_MVC.ViewModels;
+using Infrastructure.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Text;
 
 namespace AspnetCore_MVC.Controllers;
 
@@ -79,7 +82,26 @@ public class HomeController : Controller
                     new AppRating { Name="Google Play", Rating="rating 4.8, 30K+ reviews", Award="App of the Day", AppLink = new(){ ImageUrl="/Images/googleplay.svg", AltText="Google Play" }, LinkToStore="" },
                 }
 
+            },
+
+            Integrate = new IntegrateViewModel()
+            {
+                Id = "Integrate",
+                Title = "Integrate Top Work Tools",
+                Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus.",
+                WorkTools = new List<WorkTools>
+                {
+                    new WorkTools { logoUrl ="/Images/Google.svg", text = "Lorem magnis pretium sed curabitur nunc facilisi nunc cursus sagittis."},
+                    new WorkTools { logoUrl ="/Images/zoom.svg", text = "In eget a mauris quis. Tortor dui tempus quis integer est sit natoque placerat dolor."},
+                    new WorkTools { logoUrl ="/Images/slack.svg", text = "Id mollis consectetur congue egestas egestas suspendisse blandit justo."},
+                    new WorkTools { logoUrl ="/Images/gmail.svg", text = "Rutrum interdum tortor, sed at nulla. A cursus bibendum elit purus cras praesent."},
+                    new WorkTools { logoUrl ="/Images/trello.svg", text = "Congue pellentesque amet, viverra curabitur quam diam scelerisque fermentum urna."},
+                    new WorkTools { logoUrl ="/Images/mailchimp.svg", text = "A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris."},
+                    new WorkTools { logoUrl ="/Images/dropbox.svg", text = "Ut in turpis consequat odio diam lectus elementum. Est faucibus blandit platea."},
+                    new WorkTools { logoUrl ="/Images/evernote.svg", text = "Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu."}
+                }
             }
+
 
 
         };
@@ -93,4 +115,6 @@ public class HomeController : Controller
     {
         return View();
     }
+
 }
+

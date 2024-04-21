@@ -556,10 +556,18 @@ footer .container .social-media {
   position: relative;
   z-index: -1;
   width: 100%;
+  display: none;
+}
+@media (min-width: 1200px) {
+  .showcase img {
+    display: block;
+    width: 55%;
+  }
 }
 @media (min-width: 992px) {
   .showcase img {
     width: 55%;
+    display: block;
   }
 }
 .showcase .container {
@@ -815,9 +823,16 @@ section.feature .container .feature-box #box-6 {
 section.managework .container {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 section.managework .container img {
   margin-right: 50px;
+  display: none;
+}
+@media (min-width: 1200px) {
+  section.managework .container img {
+    display: block;
+  }
 }
 section.managework .container .content {
   padding: 50px;
@@ -840,6 +855,11 @@ section.managework .container .content a {
   display: flex;
 }
 
+section.mockup img {
+  max-width: 100%; /* Ensure the image fills its container */
+  height: auto; /* Maintain aspect ratio */
+}
+
 section {
   padding: 5px;
   margin-top: 50px;
@@ -850,137 +870,154 @@ section.app {
 section.app .container {
   background-color: #EFF2FC;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 20px;
 }
 section.app .container #bg {
-  border: 1px solid #000000;
+  display: none;
+}
+@media (min-width: 1400px) {
+  section.app .container #bg {
+    display: block;
+  }
 }
 section.app .container .content {
-  border: 1px solid #000000;
+  padding: 60px 150px;
+}
+section.app .container .content h1 {
+  text-align: center;
+}
+@media (min-width: 1400px) {
+  section.app .container .content h1 {
+    padding-right: 50px;
+    text-align: start;
+  }
 }
 section.app .container .content .applications {
-  border: 1px solid #000000;
   display: grid;
-  grid-template-areas: rating link;
+}
+section.app .container .content .applications .app-content {
+  display: flex;
+  justify-content: space-between;
 }
 section.app .container .content .applications #apprating {
-  grid-area: rating;
+  display: none;
 }
 section.app .container .content .applications #appbutton {
-  grid-area: link;
+  margin-top: 60px;
 }
 
-sectionaccount-details.account .container {
+section.account .container {
   display: grid;
   grid-template-columns: 2fr 5fr;
   gap: 150px;
   margin-bottom: 70px;
 }
-sectionaccount-details.account .container aside {
+section.account .container aside {
   border-right: 1px solid #E2E5F1;
   padding-right: 20px;
 }
-sectionaccount-details.account .container aside .profile-info {
+section.account .container aside .profile-info {
   margin: 29px;
   text-align: center;
 }
-sectionaccount-details.account .container aside .profile-info h5 {
+section.account .container aside .profile-info h5 {
   margin-top: 15px;
   margin-bottom: 0;
 }
-sectionaccount-details.account .container aside .profile-info p {
+section.account .container aside .profile-info p {
   line-height: 160%;
   font-weight: 400;
   color: #565973;
   font-family: "Manrope", sans-serif;
   font-size: 16px !important;
 }
-sectionaccount-details.account .container aside nav {
+section.account .container aside nav {
   margin-top: 50px;
   text-align: left;
 }
-sectionaccount-details.account .container aside nav a {
+section.account .container aside nav a {
   margin: 10px 0;
   text-align: left;
   justify-content: flex-start;
 }
-sectionaccount-details.account .container aside nav .btn-theme-s {
+section.account .container aside nav .btn-theme-s {
   text-align: left;
   justify-content: flex-start;
 }
-sectionaccount-details.account .container .details {
+section.account .container .details {
   margin-top: 50px;
   width: 100%;
 }
-sectionaccount-details.account .container .details .basic-info form {
+section.account .container .details .basic-info form {
   padding: 1rem;
 }
-sectionaccount-details.account .container .details .basic-info form h5 {
+section.account .container .details .basic-info form h5 {
   color: #6366F1;
 }
-sectionaccount-details.account .container .details .basic-info form .content {
+section.account .container .details .basic-info form .content {
   display: grid;
   gap: 1rem 2rem;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "firstname lastname" "email phone" "bio bio" "buttons buttons";
 }
-sectionaccount-details.account .container .details .basic-info form .content #form-firstname {
+section.account .container .details .basic-info form .content #form-firstname {
   grid-area: firstname;
 }
-sectionaccount-details.account .container .details .basic-info form .content #form-lastname {
+section.account .container .details .basic-info form .content #form-lastname {
   grid-area: lastname;
 }
-sectionaccount-details.account .container .details .basic-info form .content #form-email {
+section.account .container .details .basic-info form .content #form-email {
   grid-area: email;
 }
-sectionaccount-details.account .container .details .basic-info form .content #form-phone {
+section.account .container .details .basic-info form .content #form-phone {
   grid-area: phone;
 }
-sectionaccount-details.account .container .details .basic-info form .content #form-bio {
+section.account .container .details .basic-info form .content #form-bio {
   grid-area: bio;
 }
-sectionaccount-details.account .container .details .basic-info form .content #form-bio span {
+section.account .container .details .basic-info form .content #form-bio span {
   color: #B4B7C9;
   font-weight: 400;
 }
-sectionaccount-details.account .container .details .basic-info form .content .form-buttons {
+section.account .container .details .basic-info form .content .form-buttons {
   grid-area: buttons;
   margin: 20px 0;
   display: flex;
   gap: 20px;
 }
-sectionaccount-details.account .container .details .adress-info {
+section.account .container .details .adress-info {
   margin-top: 30px;
 }
-sectionaccount-details.account .container .details .adress-info form {
+section.account .container .details .adress-info form {
   padding: 1rem;
 }
-sectionaccount-details.account .container .details .adress-info form h5 {
+section.account .container .details .adress-info form h5 {
   color: #6366F1;
 }
-sectionaccount-details.account .container .details .adress-info form .content {
+section.account .container .details .adress-info form .content {
   display: grid;
   gap: 1rem 2rem;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "addressline_1 addressline_1" "addressline_2 addressline_2" "postalcode city" "buttons buttons";
 }
-sectionaccount-details.account .container .details .adress-info form .content #form-addressline-1 {
+section.account .container .details .adress-info form .content #form-addressline-1 {
   grid-area: addressline_1;
 }
-sectionaccount-details.account .container .details .adress-info form .content #form-addressline-2 {
+section.account .container .details .adress-info form .content #form-addressline-2 {
   grid-area: addressline_2;
 }
-sectionaccount-details.account .container .details .adress-info form .content #form-addressline-2 span {
+section.account .container .details .adress-info form .content #form-addressline-2 span {
   color: #B4B7C9;
   font-weight: 400;
 }
-sectionaccount-details.account .container .details .adress-info form .content #form-postalcode {
+section.account .container .details .adress-info form .content #form-postalcode {
   grid-area: postalcode;
 }
-sectionaccount-details.account .container .details .adress-info form .content #form-city {
+section.account .container .details .adress-info form .content #form-city {
   grid-area: city;
 }
-sectionaccount-details.account .container .details .adress-info form .content .form-buttons {
+section.account .container .details .adress-info form .content .form-buttons {
   grid-area: buttons;
   margin: 20px 0;
   display: flex;
@@ -1095,4 +1132,44 @@ section.error-404 .container .content img {
 }
 section.error-404 .container .content .nav-wrapper {
   display: inline-block;
+}
+
+section.integrate .container .info {
+  padding: 0px 100px;
+}
+@media (min-width: 1400px) {
+  section.integrate .container .info {
+    padding: 0px 270px;
+  }
+}
+section.integrate .container h1 {
+  text-align: center;
+}
+section.integrate .container p {
+  text-align: center;
+}
+section.integrate .container .content {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 30px;
+}
+section.integrate .container .content img {
+  margin-bottom: 20px;
+  height: auto;
+  max-width: 56px;
+  min-width: 28px;
+}
+section.integrate .container .content p {
+  text-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+@media (min-width: 768px) {
+  section.integrate .container .content p {
+    display: block;
+  }
 }

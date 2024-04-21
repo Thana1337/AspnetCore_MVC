@@ -15,7 +15,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         builder.Services.AddControllersWithViews();
 
-
+        builder.Services.AddHttpClient();
         builder.Services.AddDbContext<ApplicationDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
         builder.Services.AddDefaultIdentity<UserEntity>(x =>
         {

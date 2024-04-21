@@ -1,0 +1,22 @@
+﻿@model AspnetCore_MVC.ViewModels.HomeIndexViewModel
+
+<section id="@Model.Integrate.Id" class="integrate">
+    <div class="container">
+        <div class="info">
+            <h1>@Model.Integrate.Title</h1>
+            <p>@Model.Integrate.Description</p>
+        </div>
+        <div class="content">
+            @if (Model.Integrate.WorkTools != null)
+            {
+                foreach (var application in @Model.Integrate.WorkTools)
+                {
+                    <div class="worktool">
+                        <img src="@application.logoUrl" alt="@application.logoUrl"/>
+                        <p>@application.text</p>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</section>

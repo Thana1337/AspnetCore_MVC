@@ -1,0 +1,51 @@
+section {
+    &.integrate {
+        .container {
+            .info {
+                padding: 0px 100px;
+
+                @include xxl {
+                    padding: 0px 270px;
+                }
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+            }
+
+            .content {
+                padding-top: 50px;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 30px;
+
+                @include xxl {
+                }
+
+                img {
+                    margin-bottom: 20px;
+                    height: auto;
+                    max-width: 56px;
+                    min-width: 28px;
+                }
+
+                p {
+                    text-align: start;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    display: none;
+
+                    @include md {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

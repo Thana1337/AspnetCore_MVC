@@ -7,14 +7,22 @@
         justify-content: flex-end;
         padding-bottom: 0px
     }
-    img {
-            position: relative;
-            z-index: -1;
-            width: 100%;
 
-            @include lg {
-                width: 55%;
-            }
+    img {
+        position: relative;
+        z-index: -1;
+        width: 100%;
+        display: none;
+
+        @include xl {
+            display: block;
+            width: 55%;
+        }
+
+        @include lg {
+            width: 55%;
+            display: block;
+        }
     }
 
     .container {
@@ -38,7 +46,6 @@
             .brands {
                 img {
                     width: 20%;
-
                 }
 
                 @include lg {

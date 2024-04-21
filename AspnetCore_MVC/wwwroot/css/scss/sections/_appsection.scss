@@ -8,26 +8,47 @@
         .container {
             background-color: #EFF2FC;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
+            gap: 20px;
 
             #bg {
-                border: 1px solid #000000;
+                display: none;
+
+                @include xxl {
+                    display: block;
+                }
             }
 
             .content {
-                border: 1px solid #000000;
+                padding: 60px 150px;
+
+                h1 {
+                    text-align: center;
+                }
+
+                @include xxl {
+
+                    h1 {
+                        padding-right: 50px;
+                        text-align: start;
+                    }
+                }
 
                 .applications {
-                    border: 1px solid #000000;
-                    display:grid;
-                    grid-template-areas: rating link;
+                    display: grid;
 
-                    #apprating{
-                        grid-area: rating;
+                    .app-content {
+                        display: flex;
+                        justify-content: space-between;
                     }
 
-                    #appbutton{
-                        grid-area: link;
+                    #apprating {
+                        display:none;
+                    }
+
+                    #appbutton {
+                        margin-top: 60px;
+
                     }
                 }
             }
