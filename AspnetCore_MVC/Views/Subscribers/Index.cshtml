@@ -1,10 +1,10 @@
-﻿@model SubsribedViewModel
+﻿@model AspnetCore_MVC.ViewModels.HomeIndexViewModel
 
 @{
     ViewData["Title"] = "Subscribe";
 }
 
-@if (Model.IsSubbed)
+@if (Model.Subsribed.IsSubbed)
 {
     <div>
         Subscribed!
@@ -13,7 +13,25 @@
 
 @Html.ValidationSummary()
 
-<form asp-action="Index" asp-controller="Subscribers" method="post">
-    <input asp-for="@Model.Email" />
-    <button type="submit">Subscribe</button>
-</form>
+<section class="subscribe">
+    <div class="container">
+        <div class="content">
+            <div class="title">
+                <h1>Don't Want to Miss Anything?<img src="/Images/arrows.svg" /></h1>
+            </div>
+            <div class="subsribe-text">
+                <h5>Sign up for Newsletters</h5>
+            </div>
+        </div>
+
+        <div class="subscribe-form">
+            <form asp-action="Index" asp-controller="Subscribers" method="post">
+                <input asp-for="@Model.Subsribed.Email" />
+                <button class="btn-theme" type="submit">Subscribe *</button>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+

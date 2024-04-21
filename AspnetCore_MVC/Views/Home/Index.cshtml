@@ -1,5 +1,6 @@
 ﻿@model AspnetCore_MVC.ViewModels.HomeIndexViewModel
 
+
 @{
 
     ViewData["Title"] = "Home";
@@ -13,11 +14,9 @@
 @await Html.PartialAsync("~/Views/Shared/Sections/_IntegratePartial.cshtml");
 
 
-
-
-
-
-
+<div>
+    @await Html.PartialAsync("~/Views/Subscribers/Index.cshtml")
+</div>
 
 
 

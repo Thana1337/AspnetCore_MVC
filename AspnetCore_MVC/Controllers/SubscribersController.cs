@@ -14,33 +14,42 @@ namespace AspnetCore_MVC.Controllers
         [Route("/subscribe")]
         public IActionResult Index()
         {
-            return View(new SubsribedViewModel());
+
+            var viewModel = new HomeIndexViewModel
+            {
+                Subsribed = new SubsribedViewModel()
+            };
+
+            // Pass HomeIndexViewModel to the view
+            return View(viewModel);
         }
 
 
         [HttpPost]
         [Route("/subscribe")]
-        public async Task<IActionResult> Index(SubsribedViewModel viewModel)
+        public async Task<IActionResult> Subscribe(SubsribedViewModel viewModel)
         {
-            if (ModelState.IsValid)
+            using var http = new HttpClient();
+
+            var url = $"https://localhost:7121/api/subscribers?email={viewModel.Email}";
+            var request = new HttpRequestMessage(HttpMethod.Post, url);
+
+            var response = await http.SendAsync(request);
+            if (response.IsSuccessStatusCode)
             {
-                using var http = new HttpClient();
-
-                var url = $"https://localhost:7121/api/subscribers?email={viewModel.Email}";
-                var request = new HttpRequestMessage(HttpMethod.Post, url);
-
-                var response = await http.SendAsync(request);
-                if (response.IsSuccessStatusCode)
-                {
-                    viewModel.IsSubbed = true;
-                }
-                else if (response.StatusCode == HttpStatusCode.Conflict)
-                {
-                    ModelState.AddModelError("", "Email is already subscribed.");
-                    return View(viewModel); 
-                }
+                viewModel.IsSubbed = true;
             }
-            return View(viewModel);
+            else if (response.StatusCode == HttpStatusCode.Conflict)
+            {
+                viewModel.IsSubbed = false;
+            }
+
+            var updatedViewModel = new HomeIndexViewModel
+            {
+                Subsribed = viewModel
+            };
+
+            return View("Index", updatedViewModel);
         }
     }
 }

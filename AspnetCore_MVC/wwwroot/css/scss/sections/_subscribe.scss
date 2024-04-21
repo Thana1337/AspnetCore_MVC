@@ -1,0 +1,41 @@
+section {
+    &.subscribe {
+        background-color: $gray-100;
+        padding: 100px 0px;
+
+        .container {
+            padding: 0px 50px;
+
+            .content {
+                .title {
+                    img {
+                        margin-left: 30px;
+                    }
+                }
+
+                .subsribe-text {
+                    margin-right: 1000px;
+
+                    h5 {
+                        color: $gray-900;
+                    }
+                }
+            }
+
+            .subscribe-form {
+                form {
+                    display: flex;
+
+                    input {
+                        flex: 1;
+                        margin-right: 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 50%;
+                        padding: 10px 20px; 
+                        box-sizing: border-box;
+                    }
+                }
+            }
+        }
+    }
+}

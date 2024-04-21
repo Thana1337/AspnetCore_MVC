@@ -14,8 +14,8 @@ public class HomeIndexViewModel
     public MockupViewModel Mockup { get; set; } = null!;
     public ManageWorkViewModel ManageWork { get; set; } = null!;
     public AppViewModel App { get; set; } = null!;
-
     public IntegrateViewModel Integrate { get; set; } = null!;
+    public SubsribedViewModel Subsribed { get; set; } = null!;
 
 
 }

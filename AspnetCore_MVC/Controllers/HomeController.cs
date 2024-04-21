@@ -100,6 +100,10 @@ public class HomeController : Controller
                     new WorkTools { logoUrl ="/Images/dropbox.svg", text = "Ut in turpis consequat odio diam lectus elementum. Est faucibus blandit platea."},
                     new WorkTools { logoUrl ="/Images/evernote.svg", text = "Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu."}
                 }
+            },
+            Subsribed = new SubsribedViewModel()
+            {
+
             }
 
 
